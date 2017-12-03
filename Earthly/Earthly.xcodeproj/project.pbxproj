@@ -11,6 +11,9 @@
 		34A246941FD458DB00273354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246921FD458DB00273354 /* Main.storyboard */; };
 		34A246961FD458DB00273354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246951FD458DB00273354 /* Assets.xcassets */; };
 		34A246991FD458DB00273354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246971FD458DB00273354 /* LaunchScreen.storyboard */; };
+		34A246A31FD4645800273354 /* Globe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A21FD4645800273354 /* Globe.storyboard */; };
+		34A246A51FD464E100273354 /* Ground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A41FD464E100273354 /* Ground.storyboard */; };
+		34A246A71FD4674D00273354 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A61FD4674D00273354 /* Icons.xcassets */; };
 		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +24,9 @@
 		34A246951FD458DB00273354 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34A246981FD458DB00273354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34A2469A1FD458DB00273354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34A246A21FD4645800273354 /* Globe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Globe.storyboard; sourceTree = "<group>"; };
+		34A246A41FD464E100273354 /* Ground.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ground.storyboard; sourceTree = "<group>"; };
+		34A246A61FD4674D00273354 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.release.xcconfig"; sourceTree = "<group>"; };
 		DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earthly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				34A2468E1FD458DB00273354 /* AppDelegate.swift */,
-				34A246921FD458DB00273354 /* Main.storyboard */,
+				34A246A11FD4643900273354 /* Storyboards */,
 				34A246A01FD458E700273354 /* Supporting Files */,
 			);
 			path = Earthly;
@@ -78,10 +84,21 @@
 			isa = PBXGroup;
 			children = (
 				34A246951FD458DB00273354 /* Assets.xcassets */,
-				34A246971FD458DB00273354 /* LaunchScreen.storyboard */,
+				34A246A61FD4674D00273354 /* Icons.xcassets */,
 				34A2469A1FD458DB00273354 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34A246A11FD4643900273354 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				34A246921FD458DB00273354 /* Main.storyboard */,
+				34A246A21FD4645800273354 /* Globe.storyboard */,
+				34A246A41FD464E100273354 /* Ground.storyboard */,
+				34A246971FD458DB00273354 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		4E46023F44054DE1908D3AE9 /* Pods */ = {
@@ -155,8 +172,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A246A31FD4645800273354 /* Globe.storyboard in Resources */,
 				34A246991FD458DB00273354 /* LaunchScreen.storyboard in Resources */,
+				34A246A51FD464E100273354 /* Ground.storyboard in Resources */,
 				34A246961FD458DB00273354 /* Assets.xcassets in Resources */,
+				34A246A71FD4674D00273354 /* Icons.xcassets in Resources */,
 				34A246941FD458DB00273354 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

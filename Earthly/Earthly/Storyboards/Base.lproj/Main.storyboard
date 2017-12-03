@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n8q-nl-h97">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="O6z-zm-hdc">
+            <objects>
+                <tabBarController id="n8q-nl-h97" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ynm-mt-887">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yjR-Te-h5y" kind="relationship" relationship="viewControllers" id="rWg-Xg-wbA"/>
+                        <segue destination="tmB-ek-0di" kind="relationship" relationship="viewControllers" id="L22-Fn-6Y5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ir-mT-5Ko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="108"/>
+        </scene>
+        <!--Globe-->
+        <scene sceneID="nJP-ig-WmB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Globe" id="yjR-Te-h5y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Globe" image="Globe" id="osm-xA-vwa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4f2-Dk-9nQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526" y="-160"/>
+        </scene>
+        <!--Ground-->
+        <scene sceneID="NGf-Wv-l7n">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ground" id="tmB-ek-0di" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ground" image="Binoculars" id="flP-r3-gHk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXt-Ds-aTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="304"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Binoculars" width="23" height="20"/>
+        <image name="Globe" width="23" height="23"/>
+    </resources>
+</document>
