@@ -11,6 +11,7 @@
 		34A246941FD458DB00273354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246921FD458DB00273354 /* Main.storyboard */; };
 		34A246961FD458DB00273354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246951FD458DB00273354 /* Assets.xcassets */; };
 		34A246991FD458DB00273354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246971FD458DB00273354 /* LaunchScreen.storyboard */; };
+		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,9 @@
 		34A246951FD458DB00273354 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34A246981FD458DB00273354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34A2469A1FD458DB00273354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.debug.xcconfig"; sourceTree = "<group>"; };
+		BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.release.xcconfig"; sourceTree = "<group>"; };
+		DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earthly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D4B7A187171D7BCDB4C0CAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34A246821FD458DB00273354 = {
 			isa = PBXGroup;
 			children = (
 				34A2468D1FD458DB00273354 /* Earthly */,
 				34A2468C1FD458DB00273354 /* Products */,
+				4E46023F44054DE1908D3AE9 /* Pods */,
+				2D4B7A187171D7BCDB4C0CAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +84,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4E46023F44054DE1908D3AE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */,
+				BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +100,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34A2469D1FD458DB00273354 /* Build configuration list for PBXNativeTarget "Earthly" */;
 			buildPhases = (
+				684EFF99F5CFD162ABA5122C /* [CP] Check Pods Manifest.lock */,
 				34A246871FD458DB00273354 /* Sources */,
 				34A246881FD458DB00273354 /* Frameworks */,
 				34A246891FD458DB00273354 /* Resources */,
+				A04951872E90ADC516284C65 /* [CP] Embed Pods Frameworks */,
+				3A01AF8E152674EAC112136C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A01AF8E152674EAC112136C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Earthly/Pods-Earthly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		684EFF99F5CFD162ABA5122C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A04951872E90ADC516284C65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Earthly/Pods-Earthly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		34A246871FD458DB00273354 /* Sources */ = {
@@ -276,6 +351,7 @@
 		};
 		34A2469E1FD458DB00273354 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,6 +368,7 @@
 		};
 		34A2469F1FD458DB00273354 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
