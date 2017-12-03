@@ -14,6 +14,9 @@
 		34A246A31FD4645800273354 /* Globe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A21FD4645800273354 /* Globe.storyboard */; };
 		34A246A51FD464E100273354 /* Ground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A41FD464E100273354 /* Ground.storyboard */; };
 		34A246A71FD4674D00273354 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A61FD4674D00273354 /* Icons.xcassets */; };
+		34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246AA1FD468EC00273354 /* GlobeViewController.swift */; };
+		34A246B21FD46A0500273354 /* coloredTiles.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 34A246B11FD46A0500273354 /* coloredTiles.mbtiles */; };
+		34A246B41FD46A4B00273354 /* LocalTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246B31FD46A4B00273354 /* LocalTiles.swift */; };
 		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		34A246A21FD4645800273354 /* Globe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Globe.storyboard; sourceTree = "<group>"; };
 		34A246A41FD464E100273354 /* Ground.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ground.storyboard; sourceTree = "<group>"; };
 		34A246A61FD4674D00273354 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		34A246AA1FD468EC00273354 /* GlobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeViewController.swift; sourceTree = "<group>"; };
+		34A246B11FD46A0500273354 /* coloredTiles.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = coloredTiles.mbtiles; sourceTree = "<group>"; };
+		34A246B31FD46A4B00273354 /* LocalTiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTiles.swift; sourceTree = "<group>"; };
 		3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.release.xcconfig"; sourceTree = "<group>"; };
 		DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earthly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				34A2468D1FD458DB00273354 /* Earthly */,
+				34A2468E1FD458DB00273354 /* AppDelegate.swift */,
 				34A2468C1FD458DB00273354 /* Products */,
 				4E46023F44054DE1908D3AE9 /* Pods */,
 				2D4B7A187171D7BCDB4C0CAD /* Frameworks */,
@@ -73,7 +80,8 @@
 		34A2468D1FD458DB00273354 /* Earthly */ = {
 			isa = PBXGroup;
 			children = (
-				34A2468E1FD458DB00273354 /* AppDelegate.swift */,
+				34A246A91FD468C800273354 /* Ground */,
+				34A246A81FD468C000273354 /* Globe */,
 				34A246A11FD4643900273354 /* Storyboards */,
 				34A246A01FD458E700273354 /* Supporting Files */,
 			);
@@ -83,8 +91,7 @@
 		34A246A01FD458E700273354 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				34A246951FD458DB00273354 /* Assets.xcassets */,
-				34A246A61FD4674D00273354 /* Icons.xcassets */,
+				34A246AC1FD4699600273354 /* Assets */,
 				34A2469A1FD458DB00273354 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -99,6 +106,64 @@
 				34A246971FD458DB00273354 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		34A246A81FD468C000273354 /* Globe */ = {
+			isa = PBXGroup;
+			children = (
+				34A246AE1FD469AF00273354 /* Model */,
+				34A246AF1FD469BA00273354 /* View */,
+				34A246AD1FD469A700273354 /* Controller */,
+			);
+			path = Globe;
+			sourceTree = "<group>";
+		};
+		34A246A91FD468C800273354 /* Ground */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ground;
+			sourceTree = "<group>";
+		};
+		34A246AC1FD4699600273354 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				34A246951FD458DB00273354 /* Assets.xcassets */,
+				34A246A61FD4674D00273354 /* Icons.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		34A246AD1FD469A700273354 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				34A246AA1FD468EC00273354 /* GlobeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		34A246AE1FD469AF00273354 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34A246B01FD469C200273354 /* Tile Sources */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34A246AF1FD469BA00273354 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34A246B01FD469C200273354 /* Tile Sources */ = {
+			isa = PBXGroup;
+			children = (
+				34A246B31FD46A4B00273354 /* LocalTiles.swift */,
+				34A246B11FD46A0500273354 /* coloredTiles.mbtiles */,
+			);
+			path = "Tile Sources";
 			sourceTree = "<group>";
 		};
 		4E46023F44054DE1908D3AE9 /* Pods */ = {
@@ -176,6 +241,7 @@
 				34A246991FD458DB00273354 /* LaunchScreen.storyboard in Resources */,
 				34A246A51FD464E100273354 /* Ground.storyboard in Resources */,
 				34A246961FD458DB00273354 /* Assets.xcassets in Resources */,
+				34A246B21FD46A0500273354 /* coloredTiles.mbtiles in Resources */,
 				34A246A71FD4674D00273354 /* Icons.xcassets in Resources */,
 				34A246941FD458DB00273354 /* Main.storyboard in Resources */,
 			);
@@ -236,6 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A246B41FD46A4B00273354 /* LocalTiles.swift in Sources */,
+				34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
