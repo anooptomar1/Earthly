@@ -35,11 +35,12 @@ class GlobeViewController: WhirlyGlobeViewController {
         layer.waitLoad = false
         layer.drawPriority = 0
         layer.singleLevelLoading = false
+        clearColor = UIColor.clear
         
         add(layer)
-        height = 0.8
-        clearColor = UIColor.black
+        height = 1.4
         frameInterval = 2
+        setZoomLimitsMin(0.001, max: 2.5)
         
         animate(toPosition: MaplyCoordinateMakeWithDegrees(-3.6704803, 40.5023056), time: 1.0)
     }
