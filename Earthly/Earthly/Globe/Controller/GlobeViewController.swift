@@ -13,7 +13,9 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     // MARK: - Properties
     
-    var layer: MaplyQuadImageTilesLayer!
+    private var layer: MaplyQuadImageTilesLayer!
+    private var firstAppearance = true
+    var translationOptions: (x: CGFloat, y: CGFloat)!
 
     
     //MARK: - Lifecycle
@@ -21,12 +23,21 @@ class GlobeViewController: WhirlyGlobeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayer()
+        configureAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if firstAppearance {
+            firstAppearance = false
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(-98.583333, 39.833333), time: 1)
+            animateIn()
+        }
     }
     
     // MARK: - Setup Tiles
     
     func setupLayer() {
-        guard let localTileSource = MaplyMBTileSource(mbTiles: LocalTiles.colored.rawValue) else { return }
+        guard let localTileSource = MaplyMBTileSource(mbTiles: LocalTile.colored.rawValue) else { return }
         layer = MaplyQuadImageTilesLayer(coordSystem: localTileSource.coordSys, tileSource: localTileSource)
     
         layer.handleEdges = true
@@ -42,7 +53,6 @@ class GlobeViewController: WhirlyGlobeViewController {
         frameInterval = 1
         setZoomLimitsMin(0.001, max: 3.5)
         
-        animate(toPosition: MaplyCoordinateMakeWithDegrees(-3.6704803, 40.5023056), time: 1.0)
     }
-
+    
 }

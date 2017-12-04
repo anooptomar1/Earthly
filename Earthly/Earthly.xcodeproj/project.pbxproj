@@ -16,10 +16,12 @@
 		34A246A71FD4674D00273354 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A61FD4674D00273354 /* Icons.xcassets */; };
 		34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246AA1FD468EC00273354 /* GlobeViewController.swift */; };
 		34A246B21FD46A0500273354 /* coloredTiles.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 34A246B11FD46A0500273354 /* coloredTiles.mbtiles */; };
-		34A246B41FD46A4B00273354 /* LocalTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246B31FD46A4B00273354 /* LocalTiles.swift */; };
+		34A246B41FD46A4B00273354 /* LocalTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246B31FD46A4B00273354 /* LocalTile.swift */; };
 		34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246B51FD4A19700273354 /* SpaceBackgroundView.swift */; };
 		34A246C41FD4E62400273354 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246C31FD4E62400273354 /* MediaManager.swift */; };
 		34A246C61FD4EDA600273354 /* GlobeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246C51FD4EDA600273354 /* GlobeManager.swift */; };
+		34A246C81FD5B45B00273354 /* AnimationMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246C71FD5B45B00273354 /* AnimationMovement.swift */; };
+		34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */; };
 		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,10 +37,12 @@
 		34A246A61FD4674D00273354 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		34A246AA1FD468EC00273354 /* GlobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeViewController.swift; sourceTree = "<group>"; };
 		34A246B11FD46A0500273354 /* coloredTiles.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = coloredTiles.mbtiles; sourceTree = "<group>"; };
-		34A246B31FD46A4B00273354 /* LocalTiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTiles.swift; sourceTree = "<group>"; };
+		34A246B31FD46A4B00273354 /* LocalTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTile.swift; sourceTree = "<group>"; };
 		34A246B51FD4A19700273354 /* SpaceBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceBackgroundView.swift; sourceTree = "<group>"; };
 		34A246C31FD4E62400273354 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		34A246C51FD4EDA600273354 /* GlobeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeManager.swift; sourceTree = "<group>"; };
+		34A246C71FD5B45B00273354 /* AnimationMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationMovement.swift; sourceTree = "<group>"; };
+		34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeAnimation.swift; sourceTree = "<group>"; };
 		3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.release.xcconfig"; sourceTree = "<group>"; };
 		DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earthly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				34A246B51FD4A19700273354 /* SpaceBackgroundView.swift */,
+				34A246C91FD5B7E500273354 /* Animation */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,7 +173,7 @@
 		34A246B01FD469C200273354 /* Tile Sources */ = {
 			isa = PBXGroup;
 			children = (
-				34A246B31FD46A4B00273354 /* LocalTiles.swift */,
+				34A246B31FD46A4B00273354 /* LocalTile.swift */,
 				34A246B11FD46A0500273354 /* coloredTiles.mbtiles */,
 			);
 			path = "Tile Sources";
@@ -181,6 +186,15 @@
 				34A246C31FD4E62400273354 /* MediaManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		34A246C91FD5B7E500273354 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				34A246C71FD5B45B00273354 /* AnimationMovement.swift */,
+				34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		4E46023F44054DE1908D3AE9 /* Pods */ = {
@@ -319,8 +333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A246B41FD46A4B00273354 /* LocalTiles.swift in Sources */,
+				34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */,
+				34A246B41FD46A4B00273354 /* LocalTile.swift in Sources */,
 				34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */,
+				34A246C81FD5B45B00273354 /* AnimationMovement.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,
 				34A246C61FD4EDA600273354 /* GlobeManager.swift in Sources */,
 				34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */,

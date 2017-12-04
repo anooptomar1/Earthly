@@ -1,5 +1,5 @@
 //
-//  LocalTiles.swift
+//  LocalTile.swift
 //  Earthly
 //
 //  Created by Max Rogers on 12/3/17.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum LocalTiles: String {
+enum LocalTile: String {
     case colored = "coloredTiles"
 }

@@ -23,7 +23,7 @@ class GlobeManager {
 //
 //    }
     
-    func retrieve(localTile tile: LocalTiles) {
+    func retrieve(localTile tile: LocalTile) {
         
     }
 }
