@@ -21,8 +21,21 @@ class SpaceBackgroundView: UIView {
     // MARK: - Add background video player
     
     func configurePlayer() {
-        let urlString = "https://drive.google.com/uc?export=download&id=17pUZ-YLF-Y0xL_Em_I72b5JS50z2YkfE"
-        guard let url = URL(string: urlString) else { return }
+        
+        if let url = MediaManager.retrieveVideoURL() {
+            insertPlayerSource(url)
+        } else {
+            let urlString = "https://drive.google.com/uc?export=download&id=17pUZ-YLF-Y0xL_Em_I72b5JS50z2YkfE"
+            guard let url = URL(string: urlString) else { return }
+            insertPlayerSource(url)
+            DispatchQueue.global().async {
+                MediaManager.downloadVideo(withURL: url)
+            }
+        }
+        
+    }
+    
+    func insertPlayerSource(_ url: URL) {
         let player = AVPlayer(url: url)
         let playerLayer = AVPlayerLayer(player: player)
         

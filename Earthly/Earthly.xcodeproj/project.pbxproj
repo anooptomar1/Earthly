@@ -18,6 +18,7 @@
 		34A246B21FD46A0500273354 /* coloredTiles.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 34A246B11FD46A0500273354 /* coloredTiles.mbtiles */; };
 		34A246B41FD46A4B00273354 /* LocalTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246B31FD46A4B00273354 /* LocalTiles.swift */; };
 		34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246B51FD4A19700273354 /* SpaceBackgroundView.swift */; };
+		34A246C41FD4E62400273354 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246C31FD4E62400273354 /* MediaManager.swift */; };
 		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		34A246B11FD46A0500273354 /* coloredTiles.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = coloredTiles.mbtiles; sourceTree = "<group>"; };
 		34A246B31FD46A4B00273354 /* LocalTiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTiles.swift; sourceTree = "<group>"; };
 		34A246B51FD4A19700273354 /* SpaceBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceBackgroundView.swift; sourceTree = "<group>"; };
+		34A246C31FD4E62400273354 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.release.xcconfig"; sourceTree = "<group>"; };
 		DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earthly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 		34A246AE1FD469AF00273354 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				34A246C21FD4E61600273354 /* Media */,
 				34A246B01FD469C200273354 /* Tile Sources */,
 			);
 			path = Model;
@@ -167,6 +170,14 @@
 				34A246B11FD46A0500273354 /* coloredTiles.mbtiles */,
 			);
 			path = "Tile Sources";
+			sourceTree = "<group>";
+		};
+		34A246C21FD4E61600273354 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				34A246C31FD4E62400273354 /* MediaManager.swift */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		4E46023F44054DE1908D3AE9 /* Pods */ = {
@@ -309,6 +320,7 @@
 				34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,
 				34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */,
+				34A246C41FD4E62400273354 /* MediaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
