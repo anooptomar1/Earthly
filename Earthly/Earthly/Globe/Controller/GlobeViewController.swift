@@ -39,8 +39,8 @@ class GlobeViewController: WhirlyGlobeViewController {
         
         add(layer)
         height = 1.4
-        frameInterval = 2
-        setZoomLimitsMin(0.001, max: 2.5)
+        frameInterval = 1
+        setZoomLimitsMin(0.001, max: 3.5)
         
         animate(toPosition: MaplyCoordinateMakeWithDegrees(-3.6704803, 40.5023056), time: 1.0)
     }

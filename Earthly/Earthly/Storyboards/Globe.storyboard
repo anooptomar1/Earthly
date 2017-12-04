@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-bQ-aaj" customClass="SpaceBackgroundView" customModule="Earthly" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="-65" width="375" height="768"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceImage" translatesAutoresizingMaskIntoConstraints="NO" id="lPz-Q3-aFx">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,7 +33,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtK-Zu-rJk">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="-65" width="375" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="bKy-6q-MSR" kind="embed" id="4mB-FK-Nqf"/>
@@ -42,14 +42,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gav-lV-ZhF" firstAttribute="bottom" secondItem="xtK-Zu-rJk" secondAttribute="bottom" id="31E-oU-wGv"/>
+                            <constraint firstItem="gav-lV-ZhF" firstAttribute="bottom" secondItem="xtK-Zu-rJk" secondAttribute="bottom" constant="-85" id="31E-oU-wGv"/>
                             <constraint firstItem="xtK-Zu-rJk" firstAttribute="leading" secondItem="gav-lV-ZhF" secondAttribute="leading" id="5ha-4t-hyf"/>
-                            <constraint firstItem="xtK-Zu-rJk" firstAttribute="top" secondItem="gav-lV-ZhF" secondAttribute="top" id="6fS-9P-vSo"/>
-                            <constraint firstItem="gav-lV-ZhF" firstAttribute="bottom" secondItem="Bha-bQ-aaj" secondAttribute="bottom" id="Br1-Fl-36G"/>
+                            <constraint firstItem="xtK-Zu-rJk" firstAttribute="top" secondItem="gav-lV-ZhF" secondAttribute="top" constant="-85" id="6fS-9P-vSo"/>
+                            <constraint firstItem="gav-lV-ZhF" firstAttribute="bottom" secondItem="Bha-bQ-aaj" secondAttribute="bottom" constant="-85" id="Br1-Fl-36G"/>
                             <constraint firstItem="gav-lV-ZhF" firstAttribute="trailing" secondItem="Bha-bQ-aaj" secondAttribute="trailing" id="Kej-th-TBH"/>
                             <constraint firstItem="Bha-bQ-aaj" firstAttribute="leading" secondItem="gav-lV-ZhF" secondAttribute="leading" id="djI-iY-QpW"/>
                             <constraint firstItem="gav-lV-ZhF" firstAttribute="trailing" secondItem="xtK-Zu-rJk" secondAttribute="trailing" id="fIi-dO-VWE"/>
-                            <constraint firstItem="Bha-bQ-aaj" firstAttribute="top" secondItem="gav-lV-ZhF" secondAttribute="top" id="yHW-cm-EgP"/>
+                            <constraint firstItem="Bha-bQ-aaj" firstAttribute="top" secondItem="gav-lV-ZhF" secondAttribute="top" constant="-85" id="yHW-cm-EgP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gav-lV-ZhF"/>
                     </view>
@@ -66,7 +66,7 @@
             <objects>
                 <viewController id="bKy-6q-MSR" customClass="GlobeViewController" customModule="Earthly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MK4-Ns-9rI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="CMN-uY-Vky"/>
                     </view>
