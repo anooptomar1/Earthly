@@ -41,7 +41,12 @@ extension GlobeViewController {
     
     func animateIn() {
         view.transform = CGAffineTransform(translationX: translationOptions.x, y: translationOptions.y)
-        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [UIViewAnimationOptions.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0,
+                       options: [UIViewAnimationOptions.curveEaseInOut],
+                       animations: {
             self.view.transform = CGAffineTransform.identity
         }, completion: nil)
     }
