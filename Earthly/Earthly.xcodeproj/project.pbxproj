@@ -23,6 +23,9 @@
 		34A246C81FD5B45B00273354 /* AnimationMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246C71FD5B45B00273354 /* AnimationMovement.swift */; };
 		34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */; };
 		34A246D21FD64C6500273354 /* EarthlyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246D11FD64C6500273354 /* EarthlyTabBarController.swift */; };
+		34A246D41FD659B300273354 /* RemoteTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246D31FD659B300273354 /* RemoteTile.swift */; };
+		34FA71EF1FD6EBB00080A182 /* GlobeControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA71EE1FD6EBB00080A182 /* GlobeControls.swift */; };
+		34FA71F11FD6F6240080A182 /* ControlAnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA71F01FD6F6240080A182 /* ControlAnimationExtensions.swift */; };
 		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		34A246C71FD5B45B00273354 /* AnimationMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationMovement.swift; sourceTree = "<group>"; };
 		34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeAnimation.swift; sourceTree = "<group>"; };
 		34A246D11FD64C6500273354 /* EarthlyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthlyTabBarController.swift; sourceTree = "<group>"; };
+		34A246D31FD659B300273354 /* RemoteTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTile.swift; sourceTree = "<group>"; };
+		34FA71EE1FD6EBB00080A182 /* GlobeControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeControls.swift; sourceTree = "<group>"; };
+		34FA71F01FD6F6240080A182 /* ControlAnimationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlAnimationExtensions.swift; sourceTree = "<group>"; };
 		3788E20352B800F25ABB01EB /* Pods-Earthly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBA22ACAFB315E1EC16768D /* Pods-Earthly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Earthly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Earthly/Pods-Earthly.release.xcconfig"; sourceTree = "<group>"; };
 		DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Earthly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +156,7 @@
 		34A246AD1FD469A700273354 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				34FA71ED1FD6E5490080A182 /* Extensions */,
 				34A246AA1FD468EC00273354 /* GlobeViewController.swift */,
 			);
 			path = Controller;
@@ -176,6 +183,7 @@
 		34A246B01FD469C200273354 /* Tile Sources */ = {
 			isa = PBXGroup;
 			children = (
+				34A246D31FD659B300273354 /* RemoteTile.swift */,
 				34A246B31FD46A4B00273354 /* LocalTile.swift */,
 				34A246B11FD46A0500273354 /* coloredTiles.mbtiles */,
 			);
@@ -195,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				34A246C71FD5B45B00273354 /* AnimationMovement.swift */,
-				34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */,
+				34FA71F01FD6F6240080A182 /* ControlAnimationExtensions.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -206,6 +214,15 @@
 				34A246D11FD64C6500273354 /* EarthlyTabBarController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		34FA71ED1FD6E5490080A182 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */,
+				34FA71EE1FD6EBB00080A182 /* GlobeControls.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4E46023F44054DE1908D3AE9 /* Pods */ = {
@@ -344,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FA71F11FD6F6240080A182 /* ControlAnimationExtensions.swift in Sources */,
 				34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */,
 				34A246D21FD64C6500273354 /* EarthlyTabBarController.swift in Sources */,
 				34A246B41FD46A4B00273354 /* LocalTile.swift in Sources */,
@@ -351,6 +369,8 @@
 				34A246C81FD5B45B00273354 /* AnimationMovement.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,
 				34A246C61FD4EDA600273354 /* GlobeManager.swift in Sources */,
+				34FA71EF1FD6EBB00080A182 /* GlobeControls.swift in Sources */,
+				34A246D41FD659B300273354 /* RemoteTile.swift in Sources */,
 				34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */,
 				34A246C41FD4E62400273354 /* MediaManager.swift in Sources */,
 			);

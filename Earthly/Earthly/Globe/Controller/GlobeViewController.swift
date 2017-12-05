@@ -13,9 +13,16 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     // MARK: - Properties
     
-    private var layer: MaplyQuadImageTilesLayer!
+    // Control properties
+    @IBOutlet weak var controlButton: UIButton!
+    @IBOutlet weak var controlView: UIView!
+    var controlsVisible = false
+    
+    // Globe animation properties
     private var firstAppearance = true
     var translationOptions: (x: CGFloat, y: CGFloat)!
+    
+    private var layer: MaplyQuadImageTilesLayer!
 
     
     //MARK: - Lifecycle
