@@ -17,7 +17,7 @@ extension UIView {
                        delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0,
-                       options: [UIViewAnimationOptions.curveEaseOut],
+                       options: .curveEaseOut,
                        animations: {
                         self.transform = CGAffineTransform(translationX: self.frame.size.width - 30, y: 0)
         }, completion: nil)
@@ -28,7 +28,7 @@ extension UIView {
                        delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0,
-                       options: [UIViewAnimationOptions.curveEaseOut],
+                       options: .curveEaseOut,
                        animations: {
                         self.transform = CGAffineTransform.identity
         }, completion: nil)
@@ -41,7 +41,7 @@ extension UIView {
                        delay:0.0,
                        usingSpringWithDamping:0.40,
                        initialSpringVelocity:0.1,
-                       options: .curveEaseOut,
+                       options: [.curveEaseOut, .allowUserInteraction],
                        animations: {
                         self.transform = expandTransform.inverted()
                         self.transform = CGAffineTransform.identity

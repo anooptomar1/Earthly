@@ -45,7 +45,7 @@ extension GlobeViewController {
                        delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0,
-                       options: [UIViewAnimationOptions.curveEaseInOut],
+                       options: .curveEaseInOut,
                        animations: {
             self.view.transform = CGAffineTransform.identity
         }, completion: {(_) in
