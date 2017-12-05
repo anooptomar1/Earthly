@@ -48,4 +48,10 @@ extension UIView {
         }, completion: nil)
     }
     
+    func appear() {
+        UIView.animate(withDuration: 1) {
+            self.alpha = 1.0
+        }
+    }
+    
 }

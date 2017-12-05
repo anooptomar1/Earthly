@@ -37,7 +37,7 @@ class GlobeViewController: WhirlyGlobeViewController {
         if firstAppearance {
             firstAppearance = false
             animate(toPosition: MaplyCoordinateMakeWithDegrees(-98.583333, 39.833333), time: 1)
-            animateIn()
+            animateGlobeControllerIn()
         }
     }
     

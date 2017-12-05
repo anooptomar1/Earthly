@@ -70,14 +70,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHk-ql-zk4">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHk-ql-zk4">
                                 <rect key="frame" x="327" y="115" width="32" height="33"/>
-                                <state key="normal" image="Controls"/>
+                                <state key="normal" image="ControlsClosed"/>
                                 <connections>
                                     <action selector="controlTapped:" destination="bKy-6q-MSR" eventType="touchUpInside" id="frX-X6-cuy"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YnJ-WV-C11">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YnJ-WV-C11">
                                 <rect key="frame" x="-400" y="99" width="375" height="64"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -103,7 +103,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Controls" width="32" height="33"/>
+        <image name="ControlsClosed" width="32" height="33"/>
         <image name="Globe" width="23" height="23"/>
         <image name="SpaceImage" width="1920" height="1080"/>
     </resources>

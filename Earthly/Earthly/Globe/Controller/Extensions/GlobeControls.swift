@@ -17,13 +17,14 @@ extension GlobeViewController {
         
         if !controlsVisible {
             self.controlView.animateControlViewIn()
+            self.controlView.appear()
+            self.controlButton.setImage(#imageLiteral(resourceName: "ControlsOpen"), for: .normal)
         } else {
             self.controlView.animateControlViewOut()
+            self.controlButton.setImage(#imageLiteral(resourceName: "ControlsClosed"), for: .normal)
         }
         controlsVisible = !controlsVisible
     }
-
-
     
 }
 

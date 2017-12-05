@@ -39,7 +39,7 @@ extension GlobeViewController {
         view.frame = CGRect(x: x, y: y, width: view.frame.size.width, height: view.frame.size.height)
     }
     
-    func animateIn() {
+    func animateGlobeControllerIn() {
         view.transform = CGAffineTransform(translationX: translationOptions.x, y: translationOptions.y)
         UIView.animate(withDuration: 1.5,
                        delay: 0,
@@ -48,7 +48,9 @@ extension GlobeViewController {
                        options: [UIViewAnimationOptions.curveEaseInOut],
                        animations: {
             self.view.transform = CGAffineTransform.identity
-        }, completion: nil)
+        }, completion: {(_) in
+            self.controlButton.appear()
+        })
     }
     
 }
