@@ -13,7 +13,7 @@ extension UIView {
     // MARK: - functions to animate control buttons and views
     
     func animateControlViewIn() {
-        UIView.animate(withDuration: 0.8,
+        UIView.animate(withDuration: 1.6,
                        delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0,
@@ -24,7 +24,7 @@ extension UIView {
     }
     
     func animateControlViewOut() {
-        UIView.animate(withDuration: 0.8,
+        UIView.animate(withDuration: 1.6,
                        delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0,
@@ -37,7 +37,7 @@ extension UIView {
     func animateControlButton() {
         let expandTransform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         self.transform = expandTransform
-        UIView.animate(withDuration: 0.8,
+        UIView.animate(withDuration: 1.6,
                        delay:0.0,
                        usingSpringWithDamping:0.40,
                        initialSpringVelocity:0.1,
