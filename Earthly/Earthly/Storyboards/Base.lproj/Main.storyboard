@@ -18,7 +18,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="0.8025203339041096" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="0.5" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="yjR-Te-h5y" kind="relationship" relationship="viewControllers" id="rWg-Xg-wbA"/>
