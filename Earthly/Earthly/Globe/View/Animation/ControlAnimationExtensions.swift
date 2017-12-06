@@ -10,16 +10,18 @@ import UIKit
 
 extension UIView {
     
-    // MARK: - functions to animate control buttons and views
+    // MARK: - Functions to animate control buttons and views
     
     func animateControlViewIn() {
+        self.isHidden = false
         UIView.animate(withDuration: 1.6,
                        delay: 0,
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 0,
-                       options: .curveEaseOut,
+                       options: [.curveEaseOut, .allowUserInteraction],
                        animations: {
-                        self.transform = CGAffineTransform(translationX: self.frame.size.width - 30, y: 0)
+                        self.transform = CGAffineTransform(translationX: self.frame.size.width, y: 0)
+                        self.alpha = 1.0
         }, completion: nil)
     }
     
@@ -31,10 +33,11 @@ extension UIView {
                        options: .curveEaseOut,
                        animations: {
                         self.transform = CGAffineTransform.identity
+                        self.alpha = 0.0
         }, completion: nil)
     }
     
-    func animateControlButton() {
+    func animateButton() {
         let expandTransform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         self.transform = expandTransform
         UIView.animate(withDuration: 1.6,

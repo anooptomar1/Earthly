@@ -13,7 +13,6 @@ extension GlobeViewController {
     // MARK: - Animation
     
     func configureAnimation() {
-        
         let movement = AnimationMovement.randomMovement()
         var x: CGFloat!
         var y: CGFloat!

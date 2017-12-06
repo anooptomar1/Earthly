@@ -13,7 +13,7 @@ extension GlobeViewController {
     // MARK: - Actions
     
     @IBAction func controlTapped(_ sender: UIButton) {
-        self.controlButton.animateControlButton()
+        self.controlButton.animateButton()
         
         if !controlsVisible {
             self.controlView.animateControlViewIn()
@@ -25,6 +25,28 @@ extension GlobeViewController {
         }
         controlsVisible = !controlsVisible
     }
+    
+    @IBAction func gpsTapped(_ sender: UIButton) {
+        self.gpsButton.animateButton()
+        
+    }
+    
+    @IBAction func layersTapped(_ sender: UIButton) {
+        self.layersButton.animateButton()
+        
+    }
+    
+    @IBAction func scienceTapped(_ sender: UIButton) {
+        self.scienceButton.animateButton()
+        
+    }
+    
+    @IBAction func searchTapped(_ sender: UIButton) {
+        self.searchButton.animateButton()
+        
+    }
+    
+    
     
 }
 

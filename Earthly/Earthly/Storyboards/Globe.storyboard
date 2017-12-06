@@ -78,26 +78,38 @@
                                 </connections>
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YnJ-WV-C11">
-                                <rect key="frame" x="-400" y="99" width="375" height="64"/>
+                                <rect key="frame" x="28" y="99" width="319" height="64"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-1F-hIn">
-                                        <rect key="frame" x="10" y="0.0" width="355" height="64"/>
+                                        <rect key="frame" x="10" y="0.0" width="299" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub6-5i-u38">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="71" height="64"/>
                                                 <state key="normal" image="GPS"/>
+                                                <connections>
+                                                    <action selector="gpsTapped:" destination="bKy-6q-MSR" eventType="touchUpInside" id="D2M-xR-FPj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-uN-1er">
-                                                <rect key="frame" x="90" y="0.0" width="85" height="64"/>
+                                                <rect key="frame" x="76" y="0.0" width="71" height="64"/>
                                                 <state key="normal" image="Layers"/>
+                                                <connections>
+                                                    <action selector="layersTapped:" destination="bKy-6q-MSR" eventType="touchUpInside" id="djF-KP-O0o"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L49-QW-MkB">
-                                                <rect key="frame" x="180" y="0.0" width="85" height="64"/>
+                                                <rect key="frame" x="152" y="0.0" width="71" height="64"/>
                                                 <state key="normal" image="Science"/>
+                                                <connections>
+                                                    <action selector="scienceTapped:" destination="bKy-6q-MSR" eventType="touchUpInside" id="wwj-2B-Gk8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2Q-aW-8rb">
-                                                <rect key="frame" x="270" y="0.0" width="85" height="64"/>
+                                                <rect key="frame" x="228" y="0.0" width="71" height="64"/>
                                                 <state key="normal" image="Search"/>
+                                                <connections>
+                                                    <action selector="searchTapped:" destination="bKy-6q-MSR" eventType="touchUpInside" id="cfq-i7-BWr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -115,15 +127,20 @@
                             <constraint firstItem="YnJ-WV-C11" firstAttribute="height" secondItem="MK4-Ns-9rI" secondAttribute="height" multiplier="1/12" id="2O4-R9-IO9"/>
                             <constraint firstItem="CMN-uY-Vky" firstAttribute="trailing" secondItem="PHk-ql-zk4" secondAttribute="trailing" constant="16" id="2tf-Gh-kGQ"/>
                             <constraint firstItem="YnJ-WV-C11" firstAttribute="centerY" secondItem="PHk-ql-zk4" secondAttribute="centerY" id="CwZ-tQ-JRq"/>
-                            <constraint firstItem="YnJ-WV-C11" firstAttribute="leading" secondItem="MK4-Ns-9rI" secondAttribute="leading" constant="-400" id="hCf-Ks-N4D"/>
                             <constraint firstItem="PHk-ql-zk4" firstAttribute="top" secondItem="CMN-uY-Vky" secondAttribute="top" constant="95" id="ifi-9t-T2V"/>
-                            <constraint firstItem="YnJ-WV-C11" firstAttribute="width" secondItem="MK4-Ns-9rI" secondAttribute="width" id="w01-L2-BwZ"/>
+                            <constraint firstItem="YnJ-WV-C11" firstAttribute="width" secondItem="MK4-Ns-9rI" secondAttribute="width" multiplier="0.85" id="w01-L2-BwZ"/>
+                            <constraint firstItem="YnJ-WV-C11" firstAttribute="centerX" secondItem="MK4-Ns-9rI" secondAttribute="centerX" id="z26-H0-fTi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CMN-uY-Vky"/>
                     </view>
                     <connections>
                         <outlet property="controlButton" destination="PHk-ql-zk4" id="Wf8-mF-C0O"/>
                         <outlet property="controlView" destination="YnJ-WV-C11" id="4Qq-AH-QxL"/>
+                        <outlet property="controlViewXConstraint" destination="z26-H0-fTi" id="wnj-qX-m7u"/>
+                        <outlet property="gpsButton" destination="Ub6-5i-u38" id="lHY-kn-L0n"/>
+                        <outlet property="layersButton" destination="zNT-uN-1er" id="9cn-rQ-1pQ"/>
+                        <outlet property="scienceButton" destination="L49-QW-MkB" id="W8s-5T-kGa"/>
+                        <outlet property="searchButton" destination="r2Q-aW-8rb" id="8zh-kz-aSW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDp-Wl-D8k" userLabel="First Responder" sceneMemberID="firstResponder"/>

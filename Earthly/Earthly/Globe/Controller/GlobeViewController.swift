@@ -15,7 +15,12 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     // Control properties
     @IBOutlet weak var controlButton: UIButton!
+    @IBOutlet weak var gpsButton: UIButton!
+    @IBOutlet weak var layersButton: UIButton!
+    @IBOutlet weak var scienceButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var controlView: UIView!
+    @IBOutlet weak var controlViewXConstraint: NSLayoutConstraint!
     var controlsVisible = false
     
     // Globe animation properties
@@ -35,6 +40,8 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if firstAppearance {
+            let newX = (view.frame.minX - (controlView.frame.size.width + 25))
+            controlViewXConstraint.constant = newX
             firstAppearance = false
             animate(toPosition: MaplyCoordinateMakeWithDegrees(-98.583333, 39.833333), time: 1)
             animateGlobeControllerIn()
