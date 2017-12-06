@@ -79,7 +79,36 @@
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YnJ-WV-C11">
                                 <rect key="frame" x="-400" y="99" width="375" height="64"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-1F-hIn">
+                                        <rect key="frame" x="10" y="0.0" width="355" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub6-5i-u38">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="64"/>
+                                                <state key="normal" image="GPS"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-uN-1er">
+                                                <rect key="frame" x="90" y="0.0" width="85" height="64"/>
+                                                <state key="normal" image="Layers"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L49-QW-MkB">
+                                                <rect key="frame" x="180" y="0.0" width="85" height="64"/>
+                                                <state key="normal" image="Science"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2Q-aW-8rb">
+                                                <rect key="frame" x="270" y="0.0" width="85" height="64"/>
+                                                <state key="normal" image="Search"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pkg-1F-hIn" firstAttribute="top" secondItem="YnJ-WV-C11" secondAttribute="top" id="6rl-60-cuf"/>
+                                    <constraint firstAttribute="bottom" secondItem="pkg-1F-hIn" secondAttribute="bottom" id="I03-hY-xWC"/>
+                                    <constraint firstAttribute="trailing" secondItem="pkg-1F-hIn" secondAttribute="trailing" constant="10" id="NJf-DR-XvW"/>
+                                    <constraint firstItem="pkg-1F-hIn" firstAttribute="leading" secondItem="YnJ-WV-C11" secondAttribute="leading" constant="10" id="gdr-JF-5qR"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <constraints>
@@ -104,7 +133,11 @@
     </scenes>
     <resources>
         <image name="ControlsClosed" width="32" height="33"/>
+        <image name="GPS" width="30" height="30"/>
         <image name="Globe" width="23" height="23"/>
+        <image name="Layers" width="30" height="29"/>
+        <image name="Science" width="31" height="29"/>
+        <image name="Search" width="30" height="30"/>
         <image name="SpaceImage" width="1920" height="1080"/>
     </resources>
 </document>
