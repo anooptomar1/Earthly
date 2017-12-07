@@ -52,8 +52,8 @@ extension UIView {
     }
     
     func appear() {
-        UIView.animate(withDuration: 1) {
-            self.alpha = 1.0
+        UIView.animate(withDuration: 0.5) {
+            self.alpha = 0.9
         }
     }
     

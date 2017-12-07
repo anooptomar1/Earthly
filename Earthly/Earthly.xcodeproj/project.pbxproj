@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34650E9C1FD8BF8300056005 /* RemoteTiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 34650E9B1FD8BF8200056005 /* RemoteTiles.json */; };
+		34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */; };
 		34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A2468E1FD458DB00273354 /* AppDelegate.swift */; };
 		34A246941FD458DB00273354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246921FD458DB00273354 /* Main.storyboard */; };
 		34A246961FD458DB00273354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246951FD458DB00273354 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34650E9B1FD8BF8200056005 /* RemoteTiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RemoteTiles.json; sourceTree = "<group>"; };
+		34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeControlActionSheets.swift; sourceTree = "<group>"; };
 		34A2468B1FD458DB00273354 /* Earthly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Earthly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A2468E1FD458DB00273354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34A246931FD458DB00273354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				34A246D31FD659B300273354 /* RemoteTile.swift */,
+				34650E9B1FD8BF8200056005 /* RemoteTiles.json */,
 				34A246B31FD46A4B00273354 /* LocalTile.swift */,
 				34A246B11FD46A0500273354 /* coloredTiles.mbtiles */,
 			);
@@ -221,6 +226,7 @@
 			children = (
 				34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */,
 				34FA71EE1FD6EBB00080A182 /* GlobeControls.swift */,
+				34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				34A246A51FD464E100273354 /* Ground.storyboard in Resources */,
 				34A246961FD458DB00273354 /* Assets.xcassets in Resources */,
 				34A246B21FD46A0500273354 /* coloredTiles.mbtiles in Resources */,
+				34650E9C1FD8BF8300056005 /* RemoteTiles.json in Resources */,
 				34A246A71FD4674D00273354 /* Icons.xcassets in Resources */,
 				34A246941FD458DB00273354 /* Main.storyboard in Resources */,
 			);
@@ -365,6 +372,7 @@
 				34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */,
 				34A246D21FD64C6500273354 /* EarthlyTabBarController.swift in Sources */,
 				34A246B41FD46A4B00273354 /* LocalTile.swift in Sources */,
+				34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */,
 				34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */,
 				34A246C81FD5B45B00273354 /* AnimationMovement.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,

@@ -10,4 +10,6 @@ import Foundation
 
 enum LocalTile: String {
     case colored = "coloredTiles"
+    
+    static let allValues = [colored]
 }

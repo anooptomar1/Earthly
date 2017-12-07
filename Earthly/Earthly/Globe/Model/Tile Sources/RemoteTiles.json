@@ -1,0 +1,9 @@
+[
+  {
+  "name" : "Terrain",
+  "url" : "http://tile.stamen.com/terrain/",
+  "ext" : "png",
+  "minZoom" : 0,
+  "maxZoom" : 18
+  }
+]

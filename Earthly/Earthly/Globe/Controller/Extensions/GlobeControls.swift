@@ -33,6 +33,7 @@ extension GlobeViewController {
     
     @IBAction func layersTapped(_ sender: UIButton) {
         self.layersButton.animateButton()
+        self.presentLayersActionSheet()
         
     }
     

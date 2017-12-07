@@ -27,15 +27,16 @@ class GlobeViewController: WhirlyGlobeViewController {
     private var firstAppearance = true
     var translationOptions: (x: CGFloat, y: CGFloat)!
     
-    private var layer: MaplyQuadImageTilesLayer!
+    var globeManager: GlobeManager!
 
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLayer()
+        configureController()
         configureAnimation()
+        globeManager.display(localTile: LocalTile.colored)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,25 +49,15 @@ class GlobeViewController: WhirlyGlobeViewController {
         }
     }
     
-    // MARK: - Setup Tiles
+    // MARK: - Configure
     
-    func setupLayer() {
-        guard let localTileSource = MaplyMBTileSource(mbTiles: LocalTile.colored.rawValue) else { return }
-        layer = MaplyQuadImageTilesLayer(coordSystem: localTileSource.coordSys, tileSource: localTileSource)
-    
-        layer.handleEdges = true
-        layer.coverPoles = true
-        layer.requireElev = false
-        layer.waitLoad = false
-        layer.drawPriority = 0
-        layer.singleLevelLoading = false
-        clearColor = UIColor.clear
+    func configureController() {
+        globeManager = GlobeManager(controller: self)
         
-        add(layer)
+        clearColor = UIColor.clear
         height = 1.4
         frameInterval = 1
         setZoomLimitsMin(0.001, max: 3.5)
-        
     }
     
 }
