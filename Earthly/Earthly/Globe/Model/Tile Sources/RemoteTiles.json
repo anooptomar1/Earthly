@@ -4,6 +4,20 @@
   "url" : "http://tile.stamen.com/terrain/",
   "ext" : "png",
   "minZoom" : 0,
-  "maxZoom" : 18
-  }
+  "maxZoom" : 20
+  },
+ {
+ "name" : "Toner",
+ "url" : "http://tile.stamen.com/toner/",
+ "ext" : "png",
+ "minZoom" : 0,
+ "maxZoom" : 20
+ },
+ {
+ "name" : "Watercolor",
+ "url" : "http://tile.stamen.com/watercolor/",
+ "ext" : "png",
+ "minZoom" : 0,
+ "maxZoom" : 20
+ }
 ]

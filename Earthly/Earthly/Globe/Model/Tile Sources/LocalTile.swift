@@ -9,7 +9,7 @@
 import Foundation
 
 enum LocalTile: String {
-    case colored = "coloredTiles"
+    case starter = "starterTiles"
     
-    static let allValues = [colored]
+    static let allValues = [starter]
 }

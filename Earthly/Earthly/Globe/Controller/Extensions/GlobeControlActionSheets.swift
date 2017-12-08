@@ -18,6 +18,7 @@ extension GlobeViewController {
         for layer in LocalTile.allValues {
             let name = "\(layer)"
             let layerOption = UIAlertAction(title: name.capitalizingFirstLetter(), style: .default, handler: { (_) in
+                self.removeLayers([self.globeManager.currentLayer])
                 self.globeManager.display(localTile: layer)
             })
             actionSheet.addAction(layerOption)
@@ -25,6 +26,7 @@ extension GlobeViewController {
         
         for remoteTile in globeManager.remoteTiles {
             let layerOption = UIAlertAction(title: remoteTile.name, style: .default, handler: { (_) in
+                self.removeLayers([self.globeManager.currentLayer])
                 self.globeManager.display(remoteTile: remoteTile)
             })
             actionSheet.addAction(layerOption)

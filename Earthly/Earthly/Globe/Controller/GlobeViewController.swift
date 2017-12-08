@@ -36,7 +36,7 @@ class GlobeViewController: WhirlyGlobeViewController {
         super.viewDidLoad()
         configureController()
         configureAnimation()
-        globeManager.display(localTile: LocalTile.colored)
+        globeManager.display(localTile: LocalTile.starter)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,7 +57,7 @@ class GlobeViewController: WhirlyGlobeViewController {
         clearColor = UIColor.clear
         height = 1.4
         frameInterval = 1
-        setZoomLimitsMin(0.001, max: 3.5)
+        setZoomLimitsMin(0.0001, max: 3.5)
     }
     
 }

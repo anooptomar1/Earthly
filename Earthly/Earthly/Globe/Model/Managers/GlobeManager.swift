@@ -35,6 +35,8 @@ class GlobeManager {
         
     }
     
+    // MARK: - Display a science tile
+    
     // MARK: - Display a remote tile
     
     func display(remoteTile tile: RemoteTile) {
