@@ -1,0 +1,3 @@
+[submodule "Earthly/libs/WhirlyGlobeMaply"]
+	path = Earthly/libs/WhirlyGlobeMaply
+	url = https://github.com/mousebird/WhirlyGlobe.git

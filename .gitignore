@@ -6,6 +6,9 @@
 build/
 DerivedData/
 
+## Ignore AerisWeatherKeys
+AerisKeys.plist
+
 ## Various settings
 *.pbxuser
 !default.pbxuser

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WhirlyGlobe
+import WhirlyGlobeMaplyComponent
 
 class GlobeViewController: WhirlyGlobeViewController {
     

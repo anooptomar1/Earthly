@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		342739441FDA1B0500FB1AE0 /* ScienceTiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 342739431FDA1B0500FB1AE0 /* ScienceTiles.json */; };
-		342739461FDA1B1D00FB1AE0 /* ScienceTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342739451FDA1B1D00FB1AE0 /* ScienceTile.swift */; };
+		3427394C1FDA403900FB1AE0 /* AerisWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427394B1FDA403900FB1AE0 /* AerisWeather.swift */; };
+		3427394E1FDA412B00FB1AE0 /* AerisKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3427394D1FDA412B00FB1AE0 /* AerisKeys.plist */; };
+		342739591FDA608B00FB1AE0 /* libWhirlyGlobeLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3427395A1FDA608B00FB1AE0 /* libWhirlyGlobeLib.a */; };
+		3427395C1FDA609700FB1AE0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3427395B1FDA609700FB1AE0 /* CoreLocation.framework */; };
+		342739601FDA60D100FB1AE0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3427395F1FDA60D100FB1AE0 /* libxml2.tbd */; };
+		342739621FDA60DE00FB1AE0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 342739611FDA60DE00FB1AE0 /* libz.tbd */; };
+		342739641FDA60ED00FB1AE0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 342739631FDA60ED00FB1AE0 /* libc++.tbd */; };
+		342739661FDA636D00FB1AE0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 342739651FDA636D00FB1AE0 /* libsqlite3.tbd */; };
+		342739671FDA639B00FB1AE0 /* WhirlyGlobeMaplyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342739561FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.framework */; };
 		34650E9C1FD8BF8300056005 /* RemoteTiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 34650E9B1FD8BF8200056005 /* RemoteTiles.json */; };
 		34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */; };
 		34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A2468E1FD458DB00273354 /* AppDelegate.swift */; };
@@ -30,12 +37,37 @@
 		34A246D41FD659B300273354 /* RemoteTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246D31FD659B300273354 /* RemoteTile.swift */; };
 		34FA71EF1FD6EBB00080A182 /* GlobeControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA71EE1FD6EBB00080A182 /* GlobeControls.swift */; };
 		34FA71F11FD6F6240080A182 /* ControlAnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA71F01FD6F6240080A182 /* ControlAnimationExtensions.swift */; };
-		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; };
+		5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		342739551FDA605300FB1AE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3427394F1FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2BE536FF1D2499E500B60FAD;
+			remoteInfo = WhirlyGlobeMaplyComponent;
+		};
+		342739571FDA605300FB1AE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3427394F1FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2BE537091D2499E500B60FAD;
+			remoteInfo = WhirlyGlobeMaplyComponentTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		342739431FDA1B0500FB1AE0 /* ScienceTiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScienceTiles.json; sourceTree = "<group>"; };
-		342739451FDA1B1D00FB1AE0 /* ScienceTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceTile.swift; sourceTree = "<group>"; };
+		3427394B1FDA403900FB1AE0 /* AerisWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AerisWeather.swift; sourceTree = "<group>"; };
+		3427394D1FDA412B00FB1AE0 /* AerisKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AerisKeys.plist; sourceTree = "<group>"; };
+		3427394F1FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WhirlyGlobeMaplyComponent.xcodeproj; path = "libs/WhirlyGlobeMaply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/WhirlyGlobeMaplyComponent.xcodeproj"; sourceTree = "<group>"; };
+		3427395A1FDA608B00FB1AE0 /* libWhirlyGlobeLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libWhirlyGlobeLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3427395B1FDA609700FB1AE0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3427395D1FDA60B900FB1AE0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		3427395F1FDA60D100FB1AE0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		342739611FDA60DE00FB1AE0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		342739631FDA60ED00FB1AE0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		342739651FDA636D00FB1AE0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		34650E9B1FD8BF8200056005 /* RemoteTiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RemoteTiles.json; sourceTree = "<group>"; };
 		34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeControlActionSheets.swift; sourceTree = "<group>"; };
 		34A2468B1FD458DB00273354 /* Earthly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Earthly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +101,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				342739671FDA639B00FB1AE0 /* WhirlyGlobeMaplyComponent.framework in Frameworks */,
+				342739661FDA636D00FB1AE0 /* libsqlite3.tbd in Frameworks */,
+				342739641FDA60ED00FB1AE0 /* libc++.tbd in Frameworks */,
+				342739621FDA60DE00FB1AE0 /* libz.tbd in Frameworks */,
+				342739601FDA60D100FB1AE0 /* libxml2.tbd in Frameworks */,
+				3427395C1FDA609700FB1AE0 /* CoreLocation.framework in Frameworks */,
+				342739591FDA608B00FB1AE0 /* libWhirlyGlobeLib.a in Frameworks */,
 				5AD5D48F4DD37C74BD4A468D /* Pods_Earthly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,9 +118,26 @@
 		2D4B7A187171D7BCDB4C0CAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				342739651FDA636D00FB1AE0 /* libsqlite3.tbd */,
+				342739631FDA60ED00FB1AE0 /* libc++.tbd */,
+				342739611FDA60DE00FB1AE0 /* libz.tbd */,
+				3427395F1FDA60D100FB1AE0 /* libxml2.tbd */,
+				3427395D1FDA60B900FB1AE0 /* libsqlite3.0.tbd */,
+				3427395B1FDA609700FB1AE0 /* CoreLocation.framework */,
+				3427395A1FDA608B00FB1AE0 /* libWhirlyGlobeLib.a */,
+				3427394F1FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.xcodeproj */,
 				DAD10637407C05D46CCA8955 /* Pods_Earthly.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		342739501FDA605300FB1AE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				342739561FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.framework */,
+				342739581FDA605300FB1AE0 /* WhirlyGlobeMaplyComponentTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		34A246821FD458DB00273354 = {
@@ -120,6 +176,7 @@
 			children = (
 				34A246AC1FD4699600273354 /* Assets */,
 				34A2469A1FD458DB00273354 /* Info.plist */,
+				3427394D1FDA412B00FB1AE0 /* AerisKeys.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -191,12 +248,11 @@
 		34A246B01FD469C200273354 /* Tile Sources */ = {
 			isa = PBXGroup;
 			children = (
-				342739451FDA1B1D00FB1AE0 /* ScienceTile.swift */,
-				342739431FDA1B0500FB1AE0 /* ScienceTiles.json */,
 				34A246D31FD659B300273354 /* RemoteTile.swift */,
 				34650E9B1FD8BF8200056005 /* RemoteTiles.json */,
 				34A246B31FD46A4B00273354 /* LocalTile.swift */,
 				34A246B11FD46A0500273354 /* starterTiles.mbtiles */,
+				3427394B1FDA403900FB1AE0 /* AerisWeather.swift */,
 			);
 			path = "Tile Sources";
 			sourceTree = "<group>";
@@ -296,12 +352,35 @@
 			mainGroup = 34A246821FD458DB00273354;
 			productRefGroup = 34A2468C1FD458DB00273354 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 342739501FDA605300FB1AE0 /* Products */;
+					ProjectRef = 3427394F1FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				34A2468A1FD458DB00273354 /* Earthly */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		342739561FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WhirlyGlobeMaplyComponent.framework;
+			remoteRef = 342739551FDA605300FB1AE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		342739581FDA605300FB1AE0 /* WhirlyGlobeMaplyComponentTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WhirlyGlobeMaplyComponentTests.xctest;
+			remoteRef = 342739571FDA605300FB1AE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		34A246891FD458DB00273354 /* Resources */ = {
@@ -310,13 +389,13 @@
 			files = (
 				34A246A31FD4645800273354 /* Globe.storyboard in Resources */,
 				34A246991FD458DB00273354 /* LaunchScreen.storyboard in Resources */,
+				3427394E1FDA412B00FB1AE0 /* AerisKeys.plist in Resources */,
 				34A246A51FD464E100273354 /* Ground.storyboard in Resources */,
 				34A246961FD458DB00273354 /* Assets.xcassets in Resources */,
 				34A246B21FD46A0500273354 /* starterTiles.mbtiles in Resources */,
 				34650E9C1FD8BF8300056005 /* RemoteTiles.json in Resources */,
 				34A246A71FD4674D00273354 /* Icons.xcassets in Resources */,
 				34A246941FD458DB00273354 /* Main.storyboard in Resources */,
-				342739441FDA1B0500FB1AE0 /* ScienceTiles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,8 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				34FA71F11FD6F6240080A182 /* ControlAnimationExtensions.swift in Sources */,
+				3427394C1FDA403900FB1AE0 /* AerisWeather.swift in Sources */,
 				34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */,
-				342739461FDA1B1D00FB1AE0 /* ScienceTile.swift in Sources */,
 				34A246D21FD64C6500273354 /* EarthlyTabBarController.swift in Sources */,
 				34A246B41FD46A4B00273354 /* LocalTile.swift in Sources */,
 				34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */,
@@ -528,11 +607,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AS2TD23UD;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/libs/WhirlyGlobeMaply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/";
 				INFOPLIST_FILE = "$(SRCROOT)/Earthly/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.maxrogers.Earthly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/libs/WhirlyGlobeMaply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/MaplyBridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -545,11 +626,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9AS2TD23UD;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/libs/WhirlyGlobeMaply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/";
 				INFOPLIST_FILE = "$(SRCROOT)/Earthly/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.maxrogers.Earthly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/libs/WhirlyGlobeMaply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/MaplyBridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

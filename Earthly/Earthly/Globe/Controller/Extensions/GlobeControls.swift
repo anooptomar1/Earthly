@@ -39,7 +39,7 @@ extension GlobeViewController {
     
     @IBAction func scienceTapped(_ sender: UIButton) {
         self.scienceButton.animateButton()
-        
+        self.presentWeatherActionSheets()
     }
     
     @IBAction func searchTapped(_ sender: UIButton) {

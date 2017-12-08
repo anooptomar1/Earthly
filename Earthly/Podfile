@@ -2,5 +2,5 @@ platform :ios, '11.0'
 
 target 'Earthly' do
   use_frameworks!
-  pod 'WhirlyGlobe'
+
 end

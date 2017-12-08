@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import WhirlyGlobe
 
 class GlobeManager {
     
@@ -15,6 +14,7 @@ class GlobeManager {
     
     var globeController: GlobeViewController
     var remoteTiles: [RemoteTile]
+    var aeris: AerisWeather
     var currentLayer: MaplyQuadImageTilesLayer!
     
     
@@ -23,6 +23,7 @@ class GlobeManager {
     init(controller: GlobeViewController, remoteTiles: [RemoteTile] = []) {
         globeController = controller
         self.remoteTiles = remoteTiles
+        self.aeris = AerisWeather(aerisID: "", aerisKey: "")
         
         if let file = Bundle.main.url(forResource: "RemoteTiles", withExtension: "json") {
             do {
@@ -33,9 +34,23 @@ class GlobeManager {
             }
         }
         
+        if let path = Bundle.main.path(forResource: "AerisKeys", ofType: "plist") {
+            guard let key = NSDictionary(contentsOfFile: path) as? [String : String],
+                let secretKey = key["SecretKey"],
+                let accessID = key["AccessID"] else { return }
+            
+            self.aeris = AerisWeather(aerisID: accessID, aerisKey: secretKey)
+        }
     }
     
-    // MARK: - Display a science tile
+    // MARK: - Display a local tile
+    
+    func display(localTile tile: LocalTile) {
+        guard let localTileSource = MaplyMBTileSource(mbTiles: tile.rawValue) else { return }
+        currentLayer = MaplyQuadImageTilesLayer(coordSystem: localTileSource.coordSys, tileSource: localTileSource)
+        presentLayer()
+    }
+    
     
     // MARK: - Display a remote tile
     
@@ -54,13 +69,40 @@ class GlobeManager {
 
     }
     
-    // MARK: - Display a local tile
+    // MARK: - Display aeris weather data
     
-    func display(localTile tile: LocalTile) {
-        guard let localTileSource = MaplyMBTileSource(mbTiles: tile.rawValue) else { return }
-        currentLayer = MaplyQuadImageTilesLayer(coordSystem: localTileSource.coordSys, tileSource: localTileSource)
-        presentLayer()
+    func displayWeatherData() {
+        aeris.setupOverlayLayer()
+        refreshAerisOverlayLayer()
     }
+    
+    @objc func refreshAerisOverlayLayer() {
+        aeris.layerTileSet.startFetch(success: { tileSources in
+            
+            let multiSource = MaplyMultiplexTileSource(sources: tileSources!)
+            
+            if let aerisLayer = self.aeris.aerisLayer {
+                self.globeController.remove(aerisLayer)
+            }
+            
+            self.aeris.aerisLayer = MaplyQuadImageTilesLayer(coordSystem: multiSource!.coordSys, tileSource: multiSource!)
+            
+            if let aerisLayer = self.aeris.aerisLayer {
+                aerisLayer.imageDepth = UInt32(self.aeris.frameCount)
+                aerisLayer.animationPeriod = self.aeris.animationPeriod
+                aerisLayer.imageFormat = MaplyQuadImageFormat.imageUShort5551
+                aerisLayer.drawPriority = kMaplyImageLayerDrawPriorityDefault + 100
+                aerisLayer.maxTiles = 1000
+                aerisLayer.importanceScale = self.aeris.importanceScale
+                self.currentLayer = aerisLayer
+                self.presentLayer()
+            }
+        },
+                                      failure: { (NSError) in
+                                        print("FAILURe", NSError.localizedDescription)
+        })
+    }
+    
     
     // MARK: - Ready the layer and present it
     
