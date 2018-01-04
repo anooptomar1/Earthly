@@ -44,7 +44,13 @@ extension GlobeViewController {
     
     @IBAction func searchTapped(_ sender: UIButton) {
         self.searchButton.animateButton()
-        
+        if !searchVisible {
+            self.searchBar.animateControlViewIn()
+            self.searchBar.appear()
+        } else {
+            self.searchBar.animateControlViewOut()
+        }
+        searchVisible = !searchVisible
     }
     
     

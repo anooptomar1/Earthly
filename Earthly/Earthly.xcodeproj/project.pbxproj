@@ -18,6 +18,8 @@
 		342739671FDA639B00FB1AE0 /* WhirlyGlobeMaplyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342739561FDA605300FB1AE0 /* WhirlyGlobeMaplyComponent.framework */; };
 		34650E9C1FD8BF8300056005 /* RemoteTiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 34650E9B1FD8BF8200056005 /* RemoteTiles.json */; };
 		34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */; };
+		348C39DC1FFC2ED100A2C82F /* EarthlySearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */; };
+		348C39E21FFDA0AE00A2C82F /* GlobeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */; };
 		34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A2468E1FD458DB00273354 /* AppDelegate.swift */; };
 		34A246941FD458DB00273354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246921FD458DB00273354 /* Main.storyboard */; };
 		34A246961FD458DB00273354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246951FD458DB00273354 /* Assets.xcassets */; };
@@ -70,6 +72,8 @@
 		342739651FDA636D00FB1AE0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		34650E9B1FD8BF8200056005 /* RemoteTiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RemoteTiles.json; sourceTree = "<group>"; };
 		34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeControlActionSheets.swift; sourceTree = "<group>"; };
+		348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthlySearchBar.swift; sourceTree = "<group>"; };
+		348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeSearch.swift; sourceTree = "<group>"; };
 		34A2468B1FD458DB00273354 /* Earthly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Earthly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A2468E1FD458DB00273354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34A246931FD458DB00273354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 		34A246AF1FD469BA00273354 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */,
 				34A246B51FD4A19700273354 /* SpaceBackgroundView.swift */,
 				34A246C91FD5B7E500273354 /* Animation */,
 			);
@@ -289,6 +294,7 @@
 				34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */,
 				34FA71EE1FD6EBB00080A182 /* GlobeControls.swift */,
 				34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */,
+				348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,11 +465,13 @@
 				34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */,
 				34A246D21FD64C6500273354 /* EarthlyTabBarController.swift in Sources */,
 				34A246B41FD46A4B00273354 /* LocalTile.swift in Sources */,
+				348C39DC1FFC2ED100A2C82F /* EarthlySearchBar.swift in Sources */,
 				34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */,
 				34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */,
 				34A246C81FD5B45B00273354 /* AnimationMovement.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,
 				34A246C61FD4EDA600273354 /* GlobeManager.swift in Sources */,
+				348C39E21FFDA0AE00A2C82F /* GlobeSearch.swift in Sources */,
 				34FA71EF1FD6EBB00080A182 /* GlobeControls.swift in Sources */,
 				34A246D41FD659B300273354 /* RemoteTile.swift in Sources */,
 				34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */,

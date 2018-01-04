@@ -21,15 +21,19 @@ class GlobeViewController: WhirlyGlobeViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var controlView: UIView!
     @IBOutlet weak var controlViewXConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchBar: EarthlySearchBar!
+    @IBOutlet weak var searchBarXConstraint: NSLayoutConstraint!
+    
     var controlsVisible = false
+    var searchVisible = false
     
     // Globe animation properties
     private var firstAppearance = true
     var translationOptions: (x: CGFloat, y: CGFloat)!
     
+    // Managers
     var globeManager: GlobeManager!
 
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -41,8 +45,11 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if firstAppearance {
-            let newX = (view.frame.minX - (controlView.frame.size.width + 25))
+            var newX = (view.frame.minX - (controlView.frame.size.width + 25))
             controlViewXConstraint.constant = newX
+            newX = (view.frame.minX - (searchBar.frame.size.width))
+            searchBarXConstraint.constant = newX
+   
             firstAppearance = false
             animate(toPosition: MaplyCoordinateMakeWithDegrees(-98.583333, 39.833333), time: 1)
             animateGlobeControllerIn()
@@ -53,7 +60,8 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     func configureController() {
         globeManager = GlobeManager(controller: self)
-        
+    
+        searchBar.delegate = self
         clearColor = UIColor.clear
         height = 1.4
         frameInterval = 1

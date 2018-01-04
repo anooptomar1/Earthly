@@ -15,7 +15,7 @@ class GlobeManager {
     var globeController: GlobeViewController
     var remoteTiles: [RemoteTile]
     var aeris: AerisWeather
-    var currentLayer: MaplyQuadImageTilesLayer!
+    var currentLayers: [MaplyQuadImageTilesLayer] = []
     
     
     // MARK: - Initialization
@@ -47,7 +47,7 @@ class GlobeManager {
     
     func display(localTile tile: LocalTile) {
         guard let localTileSource = MaplyMBTileSource(mbTiles: tile.rawValue) else { return }
-        currentLayer = MaplyQuadImageTilesLayer(coordSystem: localTileSource.coordSys, tileSource: localTileSource)
+        currentLayers.append(MaplyQuadImageTilesLayer(coordSystem: localTileSource.coordSys, tileSource: localTileSource)!)
         presentLayer()
     }
     
@@ -64,7 +64,7 @@ class GlobeManager {
                                                            minZoom: tile.minZoom,
                                                            maxZoom: tile.maxZoom) else { return }
         remoteTileSource.cacheDir = tilesCacheDir
-        currentLayer = MaplyQuadImageTilesLayer(coordSystem: remoteTileSource.coordSys, tileSource: remoteTileSource)
+        currentLayers.append(MaplyQuadImageTilesLayer(coordSystem: remoteTileSource.coordSys, tileSource: remoteTileSource)!)
         presentLayer()
 
     }
@@ -72,6 +72,12 @@ class GlobeManager {
     // MARK: - Display aeris weather data
     
     func displayWeatherData() {
+        // switch to terrain
+        let remoteTile = remoteTiles.filter { $0.name == "Terrain" }
+        if let tile = remoteTile.first {
+            globeController.removeLayers(currentLayers)
+            display(remoteTile: tile)
+        }
         aeris.setupOverlayLayer()
         refreshAerisOverlayLayer()
     }
@@ -94,7 +100,7 @@ class GlobeManager {
                 aerisLayer.drawPriority = kMaplyImageLayerDrawPriorityDefault + 100
                 aerisLayer.maxTiles = 1000
                 aerisLayer.importanceScale = self.aeris.importanceScale
-                self.currentLayer = aerisLayer
+                self.currentLayers.append(aerisLayer)
                 self.presentLayer()
             }
         },
@@ -107,13 +113,13 @@ class GlobeManager {
     // MARK: - Ready the layer and present it
     
     func presentLayer() {
-        currentLayer.handleEdges = true
-        currentLayer.coverPoles = true
-        currentLayer.requireElev = false
-        currentLayer.waitLoad = false
-        currentLayer.drawPriority = 0
-        currentLayer.singleLevelLoading = false
-        globeController.add(currentLayer)
+        currentLayers.last?.handleEdges = true
+        currentLayers.last?.coverPoles = true
+        currentLayers.last?.requireElev = false
+        currentLayers.last?.waitLoad = false
+        currentLayers.last?.drawPriority = 0
+        currentLayers.last?.singleLevelLoading = false
+        globeController.add(currentLayers.last!)
     }
     
     
