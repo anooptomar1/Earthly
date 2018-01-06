@@ -20,6 +20,7 @@
 		34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */; };
 		348C39DC1FFC2ED100A2C82F /* EarthlySearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */; };
 		348C39E21FFDA0AE00A2C82F /* GlobeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */; };
+		348C39EA2001510F00A2C82F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39E92001510F00A2C82F /* SearchTableViewController.swift */; };
 		34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A2468E1FD458DB00273354 /* AppDelegate.swift */; };
 		34A246941FD458DB00273354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246921FD458DB00273354 /* Main.storyboard */; };
 		34A246961FD458DB00273354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246951FD458DB00273354 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeControlActionSheets.swift; sourceTree = "<group>"; };
 		348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthlySearchBar.swift; sourceTree = "<group>"; };
 		348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeSearch.swift; sourceTree = "<group>"; };
+		348C39E92001510F00A2C82F /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		34A2468B1FD458DB00273354 /* Earthly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Earthly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A2468E1FD458DB00273354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34A246931FD458DB00273354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				34FA71ED1FD6E5490080A182 /* Extensions */,
 				34A246AA1FD468EC00273354 /* GlobeViewController.swift */,
+				348C39E92001510F00A2C82F /* SearchTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				348C39E21FFDA0AE00A2C82F /* GlobeSearch.swift in Sources */,
 				34FA71EF1FD6EBB00080A182 /* GlobeControls.swift in Sources */,
 				34A246D41FD659B300273354 /* RemoteTile.swift in Sources */,
+				348C39EA2001510F00A2C82F /* SearchTableViewController.swift in Sources */,
 				34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */,
 				34A246C41FD4E62400273354 /* MediaManager.swift in Sources */,
 			);

@@ -23,9 +23,19 @@ class GlobeViewController: WhirlyGlobeViewController {
     @IBOutlet weak var controlViewXConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchBar: EarthlySearchBar!
     @IBOutlet weak var searchBarXConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchContainerView: UIView!
     
-    var controlsVisible = false
+    var controlsVisible = false {
+        didSet {
+            if controlsVisible == false {
+                self.controlButton.setImage(#imageLiteral(resourceName: "ControlsClosed"), for: .normal)
+            } else {
+                self.controlButton.setImage(#imageLiteral(resourceName: "ControlsOpen"), for: .normal)
+            }
+        }
+    }
     var searchVisible = false
+    var searchViewController: SearchTableViewController?
     
     // Globe animation properties
     private var firstAppearance = true
@@ -45,10 +55,12 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if firstAppearance {
+            configureSearchController()
             var newX = (view.frame.minX - (controlView.frame.size.width + 25))
             controlViewXConstraint.constant = newX
             newX = (view.frame.minX - (searchBar.frame.size.width))
             searchBarXConstraint.constant = newX
+            searchBar.frame = CGRect(x: searchBar.frame.minX, y: controlView.frame.minY, width: searchBar.frame.width, height: searchBar.frame.height)
    
             firstAppearance = false
             animate(toPosition: MaplyCoordinateMakeWithDegrees(-98.583333, 39.833333), time: 1)
@@ -61,7 +73,6 @@ class GlobeViewController: WhirlyGlobeViewController {
     func configureController() {
         globeManager = GlobeManager(controller: self)
     
-        searchBar.delegate = self
         clearColor = UIColor.clear
         height = 1.4
         frameInterval = 1

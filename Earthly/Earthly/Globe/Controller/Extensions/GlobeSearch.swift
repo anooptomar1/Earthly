@@ -8,27 +8,30 @@
 
 import Foundation
 
-extension GlobeViewController: UITableViewDataSource {
+extension GlobeViewController {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "searchContainer" {
+            if let searchVC = segue.destination as? SearchTableViewController {
+                self.searchViewController = searchVC
+            }
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Hey"
-        cell.textLabel?.textColor = UIColor.cyan
-        cell.backgroundColor = UIColor.clear
-        return cell
-    }
-    
-}
+    func configureSearchController() {
+        self.searchBar.delegate = self
+        
+//        let searchVC = storyboard.instantiateViewController(withIdentifier: "searchTableView") as? UITableViewController
+//        searchController = EarthlySearchController(searchResultsController: searchVC)
+//        searchController.tableView = searchVC?.tableView
+//        searchController.dimsBackgroundDuringPresentation = true
+//        searchController.earthlySearchBar = self.searchBar
+//        searchController.searchBar.delegate = self
+//        searchController.searchResultsUpdater = self
+//        searchController.delegate = self
+        
+        
 
-extension GlobeViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        print(cell.textLabel?.text)
     }
     
 }
@@ -36,12 +39,15 @@ extension GlobeViewController: UITableViewDelegate {
 extension GlobeViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Forward Geocode New Text \(searchText)")
+        self.searchContainerView?.appear()
     }
     
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        // TODO: - this means they cancelled or something
-        return true
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Forward Geocode New Text \(self.searchBar.text ?? "")")
+        searchViewController?.placesOfInterest.removeAll()
+        for char in searchBar.text ?? "" {
+            searchViewController?.placesOfInterest.append("\(char)")
+        }
     }
     
 }

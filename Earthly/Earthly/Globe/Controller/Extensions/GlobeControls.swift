@@ -13,47 +13,62 @@ extension GlobeViewController {
     // MARK: - Actions
     
     @IBAction func controlTapped(_ sender: UIButton) {
-        self.controlButton.animateButton()
+        controlButton.animateButton()
         
         if !controlsVisible {
-            self.controlView.animateControlViewIn()
-            self.controlView.appear()
-            self.controlButton.setImage(#imageLiteral(resourceName: "ControlsOpen"), for: .normal)
+            controlView.animateControlViewIn()
+            controlView.appear()
         } else {
-            self.controlView.animateControlViewOut()
-            self.controlButton.setImage(#imageLiteral(resourceName: "ControlsClosed"), for: .normal)
+            controlView.animateControlViewOut()
         }
+        
+        if searchVisible {
+            removeSearchBar()
+            searchVisible = !searchVisible
+        }
+        
         controlsVisible = !controlsVisible
     }
     
     @IBAction func gpsTapped(_ sender: UIButton) {
-        self.gpsButton.animateButton()
+        gpsButton.animateButton()
         
     }
     
     @IBAction func layersTapped(_ sender: UIButton) {
-        self.layersButton.animateButton()
-        self.presentLayersActionSheet()
+        layersButton.animateButton()
+        presentLayersActionSheet()
         
     }
     
     @IBAction func scienceTapped(_ sender: UIButton) {
-        self.scienceButton.animateButton()
-        self.presentWeatherActionSheets()
+        scienceButton.animateButton()
+        presentWeatherActionSheets()
     }
     
     @IBAction func searchTapped(_ sender: UIButton) {
-        self.searchButton.animateButton()
+        searchButton.animateButton()
         if !searchVisible {
-            self.searchBar.animateControlViewIn()
-            self.searchBar.appear()
+            controlView.animateControlViewUpAndOut()
+            controlsVisible = !controlsVisible
+            searchBar.animateControlViewIn()
+            searchBar.appear()
+            searchBar.becomeFirstResponder()
         } else {
-            self.searchBar.animateControlViewOut()
+            removeSearchBar()
         }
         searchVisible = !searchVisible
     }
     
+    // MARK: Helpers
     
+    func removeSearchBar() {
+        searchBar.animateControlViewOut()
+        searchContainerView.disappear()
+        searchBar.text = ""
+        searchViewController?.placesOfInterest.removeAll()
+        searchBar.resignFirstResponder()
+    }
     
 }
 
