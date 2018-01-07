@@ -76,6 +76,9 @@ class GlobeViewController: WhirlyGlobeViewController {
     
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
         
         clearColor = UIColor.clear
         height = 1.4
