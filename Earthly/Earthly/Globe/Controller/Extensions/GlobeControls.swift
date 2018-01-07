@@ -32,6 +32,17 @@ extension GlobeViewController {
     
     @IBAction func gpsTapped(_ sender: UIButton) {
         gpsButton.animateButton()
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            CLLocationManager().requestWhenInUseAuthorization()
+        case .authorizedWhenInUse:
+            guard let location = CLLocationManager().location else { return }
+            shouldZoom(toCoordinates: location.coordinate, withScope: .city)
+        case .denied, .restricted:
+            presentNoAuthorization(for: "Location")
+        default:
+            break
+        }
         
     }
     
@@ -71,5 +82,27 @@ extension GlobeViewController {
     }
     
 }
+
+extension GlobeViewController: GlobeDelegate {
+    func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope) {
+        searchContainerView.disappear()
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        let latitude = Float(coordinates.latitude)
+        let longitude = Float(coordinates.longitude)
+        switch scope {
+        case .street:
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+        case .city:
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+        case .state:
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+        case .country:
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+        }
+    }
+}
+
+
 
 

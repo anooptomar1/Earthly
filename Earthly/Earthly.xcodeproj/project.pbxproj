@@ -21,6 +21,14 @@
 		348C39DC1FFC2ED100A2C82F /* EarthlySearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */; };
 		348C39E21FFDA0AE00A2C82F /* GlobeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */; };
 		348C39EA2001510F00A2C82F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39E92001510F00A2C82F /* SearchTableViewController.swift */; };
+		348C39F12001733900A2C82F /* SearchableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39F02001733900A2C82F /* SearchableLocation.swift */; };
+		348C39F520017D7C00A2C82F /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39F420017D7C00A2C82F /* LocationTableViewCell.swift */; };
+		348C39F720017FDA00A2C82F /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39F620017FDA00A2C82F /* ConfigurableCell.swift */; };
+		348C39F92001825200A2C82F /* TableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39F82001825200A2C82F /* TableViewHeaderView.swift */; };
+		348C39FB200185DF00A2C82F /* GlobeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39FA200185DF00A2C82F /* GlobeDelegate.swift */; };
+		348C39FD2001AB7800A2C82F /* EarthlyGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39FC2001AB7800A2C82F /* EarthlyGeocoder.swift */; };
+		348C39FF2001AEA500A2C82F /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39FE2001AEA500A2C82F /* Alerts.swift */; };
+		348C3A022001B04000A2C82F /* GlobeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C3A012001B04000A2C82F /* GlobeLocation.swift */; };
 		34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A2468E1FD458DB00273354 /* AppDelegate.swift */; };
 		34A246941FD458DB00273354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246921FD458DB00273354 /* Main.storyboard */; };
 		34A246961FD458DB00273354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246951FD458DB00273354 /* Assets.xcassets */; };
@@ -76,6 +84,14 @@
 		348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthlySearchBar.swift; sourceTree = "<group>"; };
 		348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeSearch.swift; sourceTree = "<group>"; };
 		348C39E92001510F00A2C82F /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		348C39F02001733900A2C82F /* SearchableLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableLocation.swift; sourceTree = "<group>"; };
+		348C39F420017D7C00A2C82F /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		348C39F620017FDA00A2C82F /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		348C39F82001825200A2C82F /* TableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderView.swift; sourceTree = "<group>"; };
+		348C39FA200185DF00A2C82F /* GlobeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeDelegate.swift; sourceTree = "<group>"; };
+		348C39FC2001AB7800A2C82F /* EarthlyGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthlyGeocoder.swift; sourceTree = "<group>"; };
+		348C39FE2001AEA500A2C82F /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		348C3A012001B04000A2C82F /* GlobeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeLocation.swift; sourceTree = "<group>"; };
 		34A2468B1FD458DB00273354 /* Earthly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Earthly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A2468E1FD458DB00273354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34A246931FD458DB00273354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +162,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		348C39F220017A3600A2C82F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				348C39F620017FDA00A2C82F /* ConfigurableCell.swift */,
+				348C39FA200185DF00A2C82F /* GlobeDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		348C39F320017D6000A2C82F /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				348C39F420017D7C00A2C82F /* LocationTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		34A246821FD458DB00273354 = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +237,7 @@
 				34A246AE1FD469AF00273354 /* Model */,
 				34A246AF1FD469BA00273354 /* View */,
 				34A246AD1FD469A700273354 /* Controller */,
+				348C39F220017A3600A2C82F /* Protocol */,
 			);
 			path = Globe;
 			sourceTree = "<group>";
@@ -237,6 +271,7 @@
 		34A246AE1FD469AF00273354 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				348C39F02001733900A2C82F /* SearchableLocation.swift */,
 				34A246C21FD4E61600273354 /* Managers */,
 				34A246B01FD469C200273354 /* Tile Sources */,
 			);
@@ -248,6 +283,8 @@
 			children = (
 				348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */,
 				34A246B51FD4A19700273354 /* SpaceBackgroundView.swift */,
+				348C39F82001825200A2C82F /* TableViewHeaderView.swift */,
+				348C39F320017D6000A2C82F /* TableViewCells */,
 				34A246C91FD5B7E500273354 /* Animation */,
 			);
 			path = View;
@@ -287,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				34A246D11FD64C6500273354 /* EarthlyTabBarController.swift */,
+				348C39FC2001AB7800A2C82F /* EarthlyGeocoder.swift */,
+				348C39FE2001AEA500A2C82F /* Alerts.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -296,6 +335,7 @@
 			children = (
 				34A246CA1FD5B7F100273354 /* GlobeAnimation.swift */,
 				34FA71EE1FD6EBB00080A182 /* GlobeControls.swift */,
+				348C3A012001B04000A2C82F /* GlobeLocation.swift */,
 				34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */,
 				348C39E11FFDA0AE00A2C82F /* GlobeSearch.swift */,
 			);
@@ -469,17 +509,25 @@
 				34A246D21FD64C6500273354 /* EarthlyTabBarController.swift in Sources */,
 				34A246B41FD46A4B00273354 /* LocalTile.swift in Sources */,
 				348C39DC1FFC2ED100A2C82F /* EarthlySearchBar.swift in Sources */,
+				348C3A022001B04000A2C82F /* GlobeLocation.swift in Sources */,
 				34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */,
+				348C39F92001825200A2C82F /* TableViewHeaderView.swift in Sources */,
 				34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */,
+				348C39F12001733900A2C82F /* SearchableLocation.swift in Sources */,
+				348C39FF2001AEA500A2C82F /* Alerts.swift in Sources */,
 				34A246C81FD5B45B00273354 /* AnimationMovement.swift in Sources */,
+				348C39F720017FDA00A2C82F /* ConfigurableCell.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,
+				348C39FD2001AB7800A2C82F /* EarthlyGeocoder.swift in Sources */,
 				34A246C61FD4EDA600273354 /* GlobeManager.swift in Sources */,
 				348C39E21FFDA0AE00A2C82F /* GlobeSearch.swift in Sources */,
+				348C39F520017D7C00A2C82F /* LocationTableViewCell.swift in Sources */,
 				34FA71EF1FD6EBB00080A182 /* GlobeControls.swift in Sources */,
 				34A246D41FD659B300273354 /* RemoteTile.swift in Sources */,
 				348C39EA2001510F00A2C82F /* SearchTableViewController.swift in Sources */,
 				34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */,
 				34A246C41FD4E62400273354 /* MediaManager.swift in Sources */,
+				348C39FB200185DF00A2C82F /* GlobeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

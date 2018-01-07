@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -133,12 +134,12 @@
                                     <constraint firstItem="pkg-1F-hIn" firstAttribute="leading" secondItem="YnJ-WV-C11" secondAttribute="leading" constant="10" id="gdr-JF-5qR"/>
                                 </constraints>
                             </view>
-                            <searchBar hidden="YES" alpha="0.0" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SX1-oo-i4F" customClass="EarthlySearchBar" customModule="Earthly" customModuleProvider="target">
+                            <searchBar hidden="YES" alpha="0.0" contentMode="redraw" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="SX1-oo-i4F" customClass="EarthlySearchBar" customModule="Earthly" customModuleProvider="target">
                                 <rect key="frame" x="52" y="104" width="271" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <containerView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-hG-5q3">
-                                <rect key="frame" x="10" y="173" width="355" height="262"/>
+                                <rect key="frame" x="10" y="173" width="355" height="150"/>
                                 <connections>
                                     <segue destination="hEF-fS-QwH" kind="embed" identifier="searchContainer" id="BMR-qN-Xj0"/>
                                 </connections>
@@ -153,7 +154,7 @@
                             <constraint firstItem="YnJ-WV-C11" firstAttribute="centerY" secondItem="PHk-ql-zk4" secondAttribute="centerY" id="CwZ-tQ-JRq"/>
                             <constraint firstItem="mpi-hG-5q3" firstAttribute="leading" secondItem="CMN-uY-Vky" secondAttribute="leading" constant="10" id="Nwj-Sp-uGU"/>
                             <constraint firstItem="SX1-oo-i4F" firstAttribute="width" secondItem="YnJ-WV-C11" secondAttribute="width" multiplier="0.85" id="S8D-Yn-iTM"/>
-                            <constraint firstItem="mpi-hG-5q3" firstAttribute="height" secondItem="CMN-uY-Vky" secondAttribute="height" multiplier="0.35" id="bmV-Tz-Zdy"/>
+                            <constraint firstItem="mpi-hG-5q3" firstAttribute="height" secondItem="CMN-uY-Vky" secondAttribute="height" multiplier="0.2" id="bmV-Tz-Zdy"/>
                             <constraint firstItem="PHk-ql-zk4" firstAttribute="top" secondItem="CMN-uY-Vky" secondAttribute="top" constant="95" id="ifi-9t-T2V"/>
                             <constraint firstItem="YnJ-WV-C11" firstAttribute="width" secondItem="MK4-Ns-9rI" secondAttribute="width" multiplier="0.85" id="w01-L2-BwZ"/>
                             <constraint firstItem="SX1-oo-i4F" firstAttribute="centerY" secondItem="PHk-ql-zk4" secondAttribute="centerY" id="xZz-Ix-0wm"/>
@@ -191,18 +192,39 @@
         <scene sceneID="IJy-Aa-V9Q">
             <objects>
                 <tableViewController storyboardIdentifier="searchTableView" id="hEF-fS-QwH" customClass="SearchTableViewController" customModule="Earthly" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Tb-fB-A4e">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="262"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Tb-fB-A4e">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kH6-54-5X3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="kH6-54-5X3" customClass="LocationTableViewCell" customModule="Earthly" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="355" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kH6-54-5X3" id="Csu-cA-03c">
-                                    <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F8J-od-7wN">
+                                            <rect key="frame" x="16" y="11" width="323" height="22"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="F8J-od-7wN" firstAttribute="leading" secondItem="Csu-cA-03c" secondAttribute="leadingMargin" id="5pu-c5-gOq"/>
+                                        <constraint firstItem="F8J-od-7wN" firstAttribute="top" secondItem="Csu-cA-03c" secondAttribute="topMargin" id="a9W-Be-kVa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="F8J-od-7wN" secondAttribute="bottom" id="ywh-3Q-A18"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="F8J-od-7wN" secondAttribute="trailing" id="zKg-Lk-u9M"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84995719178082196" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="locationLabel" destination="F8J-od-7wN" id="JwA-uP-aQG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

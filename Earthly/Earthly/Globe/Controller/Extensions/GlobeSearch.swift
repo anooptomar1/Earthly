@@ -19,34 +19,25 @@ extension GlobeViewController {
     }
     
     func configureSearchController() {
-        self.searchBar.delegate = self
-        
-//        let searchVC = storyboard.instantiateViewController(withIdentifier: "searchTableView") as? UITableViewController
-//        searchController = EarthlySearchController(searchResultsController: searchVC)
-//        searchController.tableView = searchVC?.tableView
-//        searchController.dimsBackgroundDuringPresentation = true
-//        searchController.earthlySearchBar = self.searchBar
-//        searchController.searchBar.delegate = self
-//        searchController.searchResultsUpdater = self
-//        searchController.delegate = self
-        
-        
-
+        searchBar.delegate = self
+        searchViewController?.globeDelegate = self
     }
     
 }
 
 extension GlobeViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.searchContainerView?.appear()
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("Forward Geocode New Text \(self.searchBar.text ?? "")")
-        searchViewController?.placesOfInterest.removeAll()
-        for char in searchBar.text ?? "" {
-            searchViewController?.placesOfInterest.append("\(char)")
+        // TOOD: activity indicator
+        if !EarthlyGeocoder.shared.geocoder.isGeocoding {
+            if searchContainerView.alpha == 0.0 {
+                self.searchContainerView?.appear()
+            }
+            let searchText = self.searchBar.text ?? ""
+            EarthlyGeocoder.shared.forwardGeocode(textQuery: searchText, completion: { (newLocations) in
+                self.searchViewController?.placesOfInterest.removeAll()
+                self.searchViewController?.placesOfInterest = newLocations
+            })
         }
     }
     

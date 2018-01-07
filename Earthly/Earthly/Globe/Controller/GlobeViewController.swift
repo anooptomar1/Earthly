@@ -43,6 +43,7 @@ class GlobeViewController: WhirlyGlobeViewController {
     
     // Managers
     var globeManager: GlobeManager!
+    var locationManager = CLLocationManager()
 
     //MARK: - Lifecycle
     
@@ -73,6 +74,9 @@ class GlobeViewController: WhirlyGlobeViewController {
     func configureController() {
         globeManager = GlobeManager(controller: self)
     
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
         clearColor = UIColor.clear
         height = 1.4
         frameInterval = 1
