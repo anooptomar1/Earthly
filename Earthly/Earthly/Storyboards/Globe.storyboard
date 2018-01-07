@@ -144,6 +144,24 @@
                                     <segue destination="hEF-fS-QwH" kind="embed" identifier="searchContainer" id="BMR-qN-Xj0"/>
                                 </connections>
                             </containerView>
+                            <view hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbO-r3-LPe">
+                                <rect key="frame" x="52" y="409" width="271" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hH1-qp-54E">
+                                        <rect key="frame" x="20" y="20" width="231" height="110"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70406142979452058" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hH1-qp-54E" secondAttribute="bottom" constant="20" id="M3Y-gl-Cmh"/>
+                                    <constraint firstItem="hH1-qp-54E" firstAttribute="leading" secondItem="EbO-r3-LPe" secondAttribute="leading" constant="20" id="ZtJ-lC-TV4"/>
+                                    <constraint firstItem="hH1-qp-54E" firstAttribute="top" secondItem="EbO-r3-LPe" secondAttribute="top" constant="20" id="m37-u7-ahS"/>
+                                    <constraint firstAttribute="trailing" secondItem="hH1-qp-54E" secondAttribute="trailing" constant="20" id="oiw-E7-Rqt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="YnJ-WV-C11" firstAttribute="height" secondItem="MK4-Ns-9rI" secondAttribute="height" multiplier="1/12" id="2O4-R9-IO9"/>
@@ -151,10 +169,14 @@
                             <constraint firstItem="SX1-oo-i4F" firstAttribute="centerX" secondItem="MK4-Ns-9rI" secondAttribute="centerX" id="54L-nd-P2r"/>
                             <constraint firstItem="CMN-uY-Vky" firstAttribute="trailing" secondItem="mpi-hG-5q3" secondAttribute="trailing" constant="10" id="A24-0h-XlY"/>
                             <constraint firstItem="mpi-hG-5q3" firstAttribute="top" secondItem="YnJ-WV-C11" secondAttribute="bottom" constant="10" id="AQW-cA-mbl"/>
+                            <constraint firstItem="EbO-r3-LPe" firstAttribute="centerX" secondItem="MK4-Ns-9rI" secondAttribute="centerX" id="Cl2-1U-mST"/>
                             <constraint firstItem="YnJ-WV-C11" firstAttribute="centerY" secondItem="PHk-ql-zk4" secondAttribute="centerY" id="CwZ-tQ-JRq"/>
+                            <constraint firstItem="EbO-r3-LPe" firstAttribute="height" secondItem="mpi-hG-5q3" secondAttribute="height" id="EbR-kT-Fwe"/>
+                            <constraint firstItem="EbO-r3-LPe" firstAttribute="width" secondItem="SX1-oo-i4F" secondAttribute="width" id="N3e-24-41z"/>
                             <constraint firstItem="mpi-hG-5q3" firstAttribute="leading" secondItem="CMN-uY-Vky" secondAttribute="leading" constant="10" id="Nwj-Sp-uGU"/>
                             <constraint firstItem="SX1-oo-i4F" firstAttribute="width" secondItem="YnJ-WV-C11" secondAttribute="width" multiplier="0.85" id="S8D-Yn-iTM"/>
                             <constraint firstItem="mpi-hG-5q3" firstAttribute="height" secondItem="CMN-uY-Vky" secondAttribute="height" multiplier="0.2" id="bmV-Tz-Zdy"/>
+                            <constraint firstItem="EbO-r3-LPe" firstAttribute="centerY" secondItem="MK4-Ns-9rI" secondAttribute="centerY" constant="100" id="cro-bl-i6b"/>
                             <constraint firstItem="PHk-ql-zk4" firstAttribute="top" secondItem="CMN-uY-Vky" secondAttribute="top" constant="95" id="ifi-9t-T2V"/>
                             <constraint firstItem="YnJ-WV-C11" firstAttribute="width" secondItem="MK4-Ns-9rI" secondAttribute="width" multiplier="0.85" id="w01-L2-BwZ"/>
                             <constraint firstItem="SX1-oo-i4F" firstAttribute="centerY" secondItem="PHk-ql-zk4" secondAttribute="centerY" id="xZz-Ix-0wm"/>
@@ -168,6 +190,9 @@
                         <outlet property="controlViewXConstraint" destination="z26-H0-fTi" id="wnj-qX-m7u"/>
                         <outlet property="gpsButton" destination="Ub6-5i-u38" id="lHY-kn-L0n"/>
                         <outlet property="layersButton" destination="zNT-uN-1er" id="9cn-rQ-1pQ"/>
+                        <outlet property="milesView" destination="EbO-r3-LPe" id="pF6-Xd-Btx"/>
+                        <outlet property="milesViewLabel" destination="hH1-qp-54E" id="hjO-wA-GW8"/>
+                        <outlet property="milesViewYConstraint" destination="cro-bl-i6b" id="9MX-Aa-bxu"/>
                         <outlet property="scienceButton" destination="L49-QW-MkB" id="W8s-5T-kGa"/>
                         <outlet property="searchBar" destination="SX1-oo-i4F" id="bmy-Fc-fdW"/>
                         <outlet property="searchBarXConstraint" destination="54L-nd-P2r" id="pR5-Iw-4Zp"/>

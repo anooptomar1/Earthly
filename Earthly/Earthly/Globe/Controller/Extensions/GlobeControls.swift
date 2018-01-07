@@ -37,7 +37,7 @@ extension GlobeViewController {
             earthlyLocationManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse:
             guard let location = earthlyLocationManager.location else { return }
-            shouldZoom(toCoordinates: location.coordinate, withScope: .city, displayMarker: true)
+            shouldZoom(toCoordinates: location.coordinate, withScope: .city, name: "Current Location", displayMarker: true)
         case .denied, .restricted:
             presentNoAuthorization(for: "Location")
         default:
@@ -71,7 +71,7 @@ extension GlobeViewController {
         searchVisible = !searchVisible
     }
     
-    // MARK: Helpers
+    // MARK: - Helpers
     
     func removeSearchBar() {
         searchBar.animateControlViewOut()
@@ -83,9 +83,11 @@ extension GlobeViewController {
     
 }
 
+// MARK: - Delegate for zooming
+
 extension GlobeViewController: GlobeDelegate {
     
-    func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope, displayMarker: Bool) {
+    func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope, name: String, displayMarker: Bool) {
         searchContainerView.disappear()
         searchBar.resignFirstResponder()
         searchBar.text = ""
@@ -96,8 +98,23 @@ extension GlobeViewController: GlobeDelegate {
             marker.image = #imageLiteral(resourceName: "GPS")
             marker.loc = MaplyCoordinateMakeWithDegrees(longitude, latitude)
             marker.size = CGSize(width: 40, height: 40)
+            marker.userObject = name
             addScreenMarkers([marker], desc: nil)
+            earthlyMarkers.append(marker)
+            
+            if earthlyMarkers.count > 1 {
+                let lastIndex = earthlyMarkers.endIndex - 1
+                let firstLocation = earthlyMarkers[lastIndex - 1]
+                let secondLocation = earthlyMarkers[lastIndex]
+                let distance = MaplyGreatCircleDistance(firstLocation.loc, secondLocation.loc)
+                let miles = distance * 0.000621371
+                print("Miles = \(distance * 0.000621371)")
+                let text = "\(firstLocation.userObject as! String) is \(miles) miles away from \(secondLocation.userObject as! String)"
+                milesViewLabel.text = text
+                milesView.animateMilesViewUp()
+            }
         }
+        
         
         switch scope {
         case .street:
@@ -109,6 +126,35 @@ extension GlobeViewController: GlobeDelegate {
         case .country:
             animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), height: 0.8, heading: 0.0, time: 1)
         }
+    }
+    
+}
+
+// MARK: - Mark selection
+
+extension GlobeViewController: WhirlyGlobeViewControllerDelegate {
+    
+    func globeViewController(_ viewC: WhirlyGlobeViewController, didSelect selectedObj: NSObject) {
+        
+        if let marker = selectedObj as? MaplyScreenMarker {
+            if !locationsMarked.contains(where: { $0.x == marker.loc.x && $0.y == marker.loc.y } ) {
+                let title = marker.userObject as? String ?? "Unknown"
+                let annotation = MaplyAnnotation()
+                annotation.title = title
+                //annotation.subTitle = subtitle
+                addAnnotation(annotation, forPoint: marker.loc, offset: CGPoint(x: 0, y: 0))
+                locationsMarked.append(marker.loc)
+            } else {
+                let currentAnnotations = annotations() as? [MaplyAnnotation]
+                if let annotationToRemove = currentAnnotations?.filter({ $0.loc.x == marker.loc.x && $0.loc.y == marker.loc.y }).first {
+                    removeAnnotation(annotationToRemove)
+                    if let index = locationsMarked.index(where: { $0.x == annotationToRemove.loc.x && $0.y == annotationToRemove.loc.y } ) {
+                        locationsMarked.remove(at: index)
+                    }
+                }
+            }
+        }
+        
     }
     
 }

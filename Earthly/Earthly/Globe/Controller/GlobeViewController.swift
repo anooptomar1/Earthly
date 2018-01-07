@@ -24,6 +24,9 @@ class GlobeViewController: WhirlyGlobeViewController {
     @IBOutlet weak var searchBar: EarthlySearchBar!
     @IBOutlet weak var searchBarXConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchContainerView: UIView!
+    @IBOutlet weak var milesView: UIView!
+    @IBOutlet weak var milesViewLabel: UILabel!
+    @IBOutlet weak var milesViewYConstraint: NSLayoutConstraint!
     
     var controlsVisible = false {
         didSet {
@@ -40,6 +43,8 @@ class GlobeViewController: WhirlyGlobeViewController {
     // Globe animation properties
     private var firstAppearance = true
     var translationOptions: (x: CGFloat, y: CGFloat)!
+    var locationsMarked: [MaplyCoordinate] = []
+    var earthlyMarkers: [MaplyScreenMarker] = []
     
     // Managers
     var globeManager: GlobeManager!
@@ -62,6 +67,9 @@ class GlobeViewController: WhirlyGlobeViewController {
             newX = (view.frame.minX - (searchBar.frame.size.width))
             searchBarXConstraint.constant = newX
             searchBar.frame = CGRect(x: searchBar.frame.minX, y: controlView.frame.minY, width: searchBar.frame.width, height: searchBar.frame.height)
+            newX = (view.frame.midY)
+            milesViewYConstraint.constant = newX
+            milesView.layer.cornerRadius = 15
    
             firstAppearance = false
             animate(toPosition: MaplyCoordinateMakeWithDegrees(-98.583333, 39.833333), time: 1)
@@ -73,6 +81,13 @@ class GlobeViewController: WhirlyGlobeViewController {
         stopLocationTracking()
         removeAllLayers()
         globeManager.display(localTile: LocalTile.starter)
+        earthlyMarkers.removeAll()
+        locationsMarked.removeAll()
+        if let annotations = annotations() as? [MaplyAnnotation] {
+            annotations.forEach {
+                removeAnnotation($0)
+            }
+        }
     }
     
     // MARK: - Configure
@@ -80,6 +95,7 @@ class GlobeViewController: WhirlyGlobeViewController {
     func configureController() {
         globeManager = GlobeManager(controller: self)
         
+        delegate = self
         earthlyLocationManager.delegate = self
         clearColor = UIColor.clear
         height = 1.4

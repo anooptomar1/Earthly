@@ -50,6 +50,23 @@ extension UIView {
         }, completion: nil)
     }
     
+    func animateMilesViewUp() {
+        self.appear()
+        let upAndOutTransform = CGAffineTransform(translationX: 0, y: -self.frame.size.height)
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                        self.transform = upAndOutTransform
+        }, completion: { (_) in
+            print(self.frame.midX, self.frame.midY)
+            self.slowDisappear()
+        })
+    }
+
+    
     func animateButton() {
         let expandTransform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         self.transform = expandTransform
@@ -74,6 +91,14 @@ extension UIView {
     func disappear() {
         UIView.animate(withDuration: 0.5) {
             self.alpha = 0.0
+            self.isHidden = true
+        }
+    }
+    
+    func slowDisappear() {
+        UIView.animate(withDuration: 6, animations: {
+            self.alpha = 0.0
+        }) { (_) in
             self.isHidden = true
         }
     }

@@ -14,7 +14,7 @@ extension GlobeViewController: CLLocationManagerDelegate {
         if status == .authorizedWhenInUse {
             earthlyLocationManager.startUpdatingLocation()
             guard let location = manager.location else { return }
-            shouldZoom(toCoordinates: location.coordinate, withScope: .country, displayMarker: false)
+            shouldZoom(toCoordinates: location.coordinate, withScope: .country, name: "Current Location", displayMarker: false)
         }
     }
     
