@@ -34,10 +34,10 @@ extension GlobeViewController {
         gpsButton.animateButton()
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
-            CLLocationManager().requestWhenInUseAuthorization()
+            earthlyLocationManager.requestWhenInUseAuthorization()
         case .authorizedWhenInUse:
-            guard let location = CLLocationManager().location else { return }
-            shouldZoom(toCoordinates: location.coordinate, withScope: .city)
+            guard let location = earthlyLocationManager.location else { return }
+            shouldZoom(toCoordinates: location.coordinate, withScope: .city, displayMarker: true)
         case .denied, .restricted:
             presentNoAuthorization(for: "Location")
         default:
@@ -84,12 +84,20 @@ extension GlobeViewController {
 }
 
 extension GlobeViewController: GlobeDelegate {
-    func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope) {
+    func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope, displayMarker: Bool) {
         searchContainerView.disappear()
         searchBar.resignFirstResponder()
         searchBar.text = ""
         let latitude = Float(coordinates.latitude)
         let longitude = Float(coordinates.longitude)
+        if displayMarker {
+            let marker = MaplyScreenMarker()
+            marker.image = #imageLiteral(resourceName: "GPS")
+            marker.loc = MaplyCoordinateMakeWithDegrees(longitude, latitude)
+            marker.size = CGSize(width: 40, height: 40)
+            addScreenMarkers([marker], desc: nil)
+        }
+        
         switch scope {
         case .street:
             animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
@@ -101,6 +109,7 @@ extension GlobeViewController: GlobeDelegate {
             animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
         }
     }
+    
 }
 
 

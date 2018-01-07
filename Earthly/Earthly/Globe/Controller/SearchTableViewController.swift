@@ -53,7 +53,7 @@ class SearchTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let cell = tableView.cellForRow(at: indexPath) as? LocationTableViewCell,
         let location = cell.model else { return }
-        globeDelegate?.shouldZoom(toCoordinates: location.coordinates, withScope: location.scope)
+        globeDelegate?.shouldZoom(toCoordinates: location.coordinates, withScope: location.scope, displayMarker: true)
     }
 
 }

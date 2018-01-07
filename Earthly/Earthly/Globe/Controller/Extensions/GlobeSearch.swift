@@ -28,13 +28,14 @@ extension GlobeViewController {
 extension GlobeViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        // TOOD: activity indicator
         if !EarthlyGeocoder.shared.geocoder.isGeocoding {
+            ActivityIndicator.shared.startAnimating()
             if searchContainerView.alpha == 0.0 {
                 self.searchContainerView?.appear()
             }
             let searchText = self.searchBar.text ?? ""
             EarthlyGeocoder.shared.forwardGeocode(textQuery: searchText, completion: { (newLocations) in
+                ActivityIndicator.shared.stopAnimating()
                 self.searchViewController?.placesOfInterest.removeAll()
                 self.searchViewController?.placesOfInterest = newLocations
             })

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GlobeDelegate: class {
-    func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope)
+    func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope, displayMarker: Bool)
 }

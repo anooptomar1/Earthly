@@ -33,3 +33,34 @@ extension UIViewController {
     
     
 }
+
+// MARK: - Activity Indicator
+
+class ActivityIndicator {
+    
+    static let shared = ActivityIndicator()
+    lazy var activityIndicator = EarthlyActivityIndicator()
+    
+    
+    func startAnimating() {
+        DispatchQueue.main.async {
+            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                let frame = CGRect(x: topController.view.frame.midX - 50, y: topController.view.frame.midY - 40, width: 100, height: 80)
+                self.activityIndicator = EarthlyActivityIndicator(frame: frame)
+                topController.view.addSubview(self.activityIndicator)
+            }
+        }
+    }
+    
+    func stopAnimating() {
+        DispatchQueue.main.async {
+            self.activityIndicator.layer.removeAllAnimations()
+            self.activityIndicator.removeFromSuperview()
+        }
+    }
+    
+}
+
