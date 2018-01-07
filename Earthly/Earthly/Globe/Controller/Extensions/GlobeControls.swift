@@ -84,6 +84,7 @@ extension GlobeViewController {
 }
 
 extension GlobeViewController: GlobeDelegate {
+    
     func shouldZoom(toCoordinates coordinates: CLLocationCoordinate2D, withScope scope: LocationScope, displayMarker: Bool) {
         searchContainerView.disappear()
         searchBar.resignFirstResponder()
@@ -100,13 +101,13 @@ extension GlobeViewController: GlobeDelegate {
         
         switch scope {
         case .street:
-            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), height: 0.0001, heading: 0.0, time: 1)
         case .city:
-            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), height: 0.005, heading: 0.0, time: 1)
         case .state:
-            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), height: 0.1, heading: 0.0, time: 1)
         case .country:
-            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), time: 1)
+            animate(toPosition: MaplyCoordinateMakeWithDegrees(longitude, latitude), height: 0.8, heading: 0.0, time: 1)
         }
     }
     

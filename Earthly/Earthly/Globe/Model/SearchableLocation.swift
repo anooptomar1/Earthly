@@ -24,14 +24,14 @@ struct SearchableLocation {
         switch name.components(separatedBy: "•").count {
         case 0:
             scope = .country
-        case 1:
-            scope = .state
         case 2:
-            scope = .city
+            scope = .state
         case 3:
+            scope = .city
+        case 4:
             scope = .street
         default:
-            scope = .state
+            scope = .country
         }
     }
 }

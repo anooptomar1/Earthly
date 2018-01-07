@@ -44,15 +44,20 @@ extension GlobeViewController {
     func presentWeatherActionSheets() {
         let weatherSheet = UIAlertController(title: "Science", message: "Select Data", preferredStyle: .actionSheet)
         
-        let sun = UIAlertAction(title: "Sun", style: .default) { (_) in
-            // TODO: - display sun
-        }
-        weatherSheet.addAction(sun)
-        
-        let moon = UIAlertAction(title: "Moon", style: .default) { (_) in
-            // TODO: - display moon
-        }
-        weatherSheet.addAction(moon)
+//        let moon = UIAlertAction(title: "Moon Position", style: .default) { (_) in
+//            // TODO: - display moon
+//            let moon = MaplyMoon(date: Date())
+//
+//            let moonShape = MaplyShapeSphere()
+//            moonShape.center = moon.asCoordinate()
+//
+//            moonShape.height = 0.05
+//            moonShape.radius = 0.05
+//            moonShape.color = UIColor.gray
+//            self.addShapes([moonShape], desc: ["zMaplyDrawOffset": 100])
+//
+//        }
+//        weatherSheet.addAction(moon)
         
         
         let infrared = UIAlertAction(title: "Weather - Infrared Satellite", style: .default) { (_) in
