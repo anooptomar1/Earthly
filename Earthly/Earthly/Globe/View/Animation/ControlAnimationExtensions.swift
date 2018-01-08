@@ -96,11 +96,9 @@ extension UIView {
     }
     
     func slowDisappear() {
-        UIView.animate(withDuration: 6, animations: {
+        UIView.animate(withDuration: 7, animations: {
             self.alpha = 0.0
-        }) { (_) in
-            self.isHidden = true
-        }
+        }, completion: nil)
     }
     
 }

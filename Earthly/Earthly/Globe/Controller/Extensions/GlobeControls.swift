@@ -107,9 +107,13 @@ extension GlobeViewController: GlobeDelegate {
                 let firstLocation = earthlyMarkers[lastIndex - 1]
                 let secondLocation = earthlyMarkers[lastIndex]
                 let distance = MaplyGreatCircleDistance(firstLocation.loc, secondLocation.loc)
-                let miles = distance * 0.000621371
+                let miles = Double(round(100 * (distance * 0.000621371))/100)
                 print("Miles = \(distance * 0.000621371)")
-                let text = "\(firstLocation.userObject as! String) is \(miles) miles away from \(secondLocation.userObject as! String)"
+                let firstLocationName = (firstLocation.userObject as! String)
+                let firstShorthand = firstLocationName.components(separatedBy: "•").first
+                let secondLocationName = (secondLocation.userObject as! String)
+                let secondShorthand = secondLocationName.components(separatedBy: "•").first
+                let text = "\(firstShorthand ?? firstLocationName) is \(miles) miles away from \(secondShorthand ?? secondLocationName)"
                 milesViewLabel.text = text
                 milesView.animateMilesViewUp()
             }
