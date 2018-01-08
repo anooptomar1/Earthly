@@ -45,6 +45,7 @@ class GlobeViewController: WhirlyGlobeViewController {
     var translationOptions: (x: CGFloat, y: CGFloat)!
     var locationsMarked: [MaplyCoordinate] = []
     var earthlyMarkers: [MaplyScreenMarker] = []
+    var activeObjects: [MaplyComponentObject] = []
     
     // Managers
     var globeManager: GlobeManager!
@@ -78,16 +79,18 @@ class GlobeViewController: WhirlyGlobeViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        remove(activeObjects, mode: .any)
+        activeObjects.removeAll()
+        if let annotations = annotations() as? [MaplyAnnotation] {
+            for annotation in annotations {
+                removeAnnotation(annotation)
+            }
+        }
+        earthlyMarkers.removeAll()
+        locationsMarked.removeAll()
         stopLocationTracking()
         removeAllLayers()
         globeManager.display(localTile: LocalTile.starter)
-        earthlyMarkers.removeAll()
-        locationsMarked.removeAll()
-        if let annotations = annotations() as? [MaplyAnnotation] {
-            annotations.forEach {
-                removeAnnotation($0)
-            }
-        }
     }
     
     // MARK: - Configure

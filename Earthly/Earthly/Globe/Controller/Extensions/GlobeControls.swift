@@ -99,7 +99,9 @@ extension GlobeViewController: GlobeDelegate {
             marker.loc = MaplyCoordinateMakeWithDegrees(longitude, latitude)
             marker.size = CGSize(width: 40, height: 40)
             marker.userObject = name
-            addScreenMarkers([marker], desc: nil)
+            marker.layoutImportance = MAXFLOAT
+            let newMarker = addScreenMarkers([marker], desc: nil)
+            activeObjects.append(newMarker!)
             earthlyMarkers.append(marker)
             
             if earthlyMarkers.count > 1 {
@@ -139,16 +141,21 @@ extension GlobeViewController: GlobeDelegate {
 extension GlobeViewController: WhirlyGlobeViewControllerDelegate {
     
     func globeViewController(_ viewC: WhirlyGlobeViewController, didSelect selectedObj: NSObject) {
+        print(selectedObj.hashValue)
         
         if let marker = selectedObj as? MaplyScreenMarker {
             if !locationsMarked.contains(where: { $0.x == marker.loc.x && $0.y == marker.loc.y } ) {
+                print(marker.loc)
                 let title = marker.userObject as? String ?? "Unknown"
                 let annotation = MaplyAnnotation()
                 annotation.title = title
                 //annotation.subTitle = subtitle
                 addAnnotation(annotation, forPoint: marker.loc, offset: CGPoint(x: 0, y: 0))
-                locationsMarked.append(marker.loc)
+                if !locationsMarked.contains(where: { $0.x == marker.loc.x && $0.y == marker.loc.y } ) {
+                    locationsMarked.append(marker.loc)
+                }
             } else {
+                print(marker.loc)
                 let currentAnnotations = annotations() as? [MaplyAnnotation]
                 if let annotationToRemove = currentAnnotations?.filter({ $0.loc.x == marker.loc.x && $0.loc.y == marker.loc.y }).first {
                     removeAnnotation(annotationToRemove)
