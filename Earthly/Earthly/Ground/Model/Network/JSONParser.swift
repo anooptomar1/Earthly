@@ -42,17 +42,35 @@ class JSONParser {
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             guard let jsonData = json as? [String : Any],
-                let detailDict = jsonData["result"] as? [String : Any],
-                let phoneNumber = detailDict["formatted_phone_number"] as? String,
-                let website = detailDict["website"] as? String
-                else { return nil }
+                let detailDict = jsonData["result"] as? [String : Any] else { return nil }
             
-            return PlaceDetail(phoneNumber: phoneNumber, website: website)
+            let phoneNumber = detailDict["formatted_phone_number"] as? String
+            let website = detailDict["website"] as? String
+            
+            var imageRefs: [String]? = []
+            if let photos = detailDict["photos"] as? [[String : Any]] {
+                for (index, photo) in photos.enumerated() {
+                    if index <= 4 {
+                        if let refString = photo["photo_reference"] as? String {
+                            imageRefs?.append(refString)
+                        }
+                    } else {
+                        break
+                    }
+                }
+            }
+            
+            if imageRefs?.count == 0 {
+                imageRefs = nil
+            }
+            
+            return PlaceDetail(phoneNumber: phoneNumber, website: website, imageReferences: imageRefs)
             
         } catch let parseError {
             print("Error Parsing JSON", parseError) 
             return nil
         }
     }
+    
     
 }

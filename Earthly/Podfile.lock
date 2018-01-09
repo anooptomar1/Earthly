@@ -1,12 +1,15 @@
 PODS:
+  - FSPagerView (0.7.1)
   - HDAugmentedReality (2.3.0)
 
 DEPENDENCIES:
+  - FSPagerView
   - HDAugmentedReality (~> 2.3)
 
 SPEC CHECKSUMS:
+  FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   HDAugmentedReality: 2ea96cb488aa81298e6557a897b4252d62e55843
 
-PODFILE CHECKSUM: ef7b9e2c6e7d3e45b4793d1b50a87fc9f00a1226
+PODFILE CHECKSUM: b07e4ffbe6853262e1884ab2e0394d64434dd9e2
 
 COCOAPODS: 1.2.1

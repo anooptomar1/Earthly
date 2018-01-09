@@ -115,7 +115,7 @@ extension GlobeViewController: GlobeDelegate {
                 let firstShorthand = firstLocationName.components(separatedBy: "•").first
                 let secondLocationName = (secondLocation.userObject as! String)
                 let secondShorthand = secondLocationName.components(separatedBy: "•").first
-                let text = "\(firstShorthand ?? firstLocationName) is \(miles) miles away from \(secondShorthand ?? secondLocationName)"
+                let text = "\(firstShorthand ?? firstLocationName) \nis \(miles) miles away from \n\(secondShorthand ?? secondLocationName)"
                 milesViewLabel.text = text
                 milesView.animateMilesViewUp()
             }

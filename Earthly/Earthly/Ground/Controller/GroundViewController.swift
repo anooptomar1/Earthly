@@ -8,8 +8,13 @@
 
 import UIKit
 import HDAugmentedReality
+import MapKit
 
 class GroundViewController: ARViewController {
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var detailImageView: UIImageView!
     
     var locationManager = CLLocationManager()
     var startedLoadingPlaces = false
@@ -18,6 +23,9 @@ class GroundViewController: ARViewController {
             setAnnotations(newValue)
         }
     }
+    var placeToSend: PlaceOfInterest!
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +34,12 @@ class GroundViewController: ARViewController {
         presenter.verticalStackingEnabled = true
         presenter.maxVisibleAnnotations = 50        
         
-        
-        
         trackingManager.userDistanceFilter = 25
         trackingManager.reloadDistanceFilter = 75
-        setAnnotations(places)
-        //arViewController.uiOptions.debugEnabled = false
         uiOptions.closeButtonEnabled = false
         locationManager.delegate = self
+        
+        // TODO: play with verticle positioning (github said to play with presenter.distance values)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,25 +70,71 @@ extension GroundViewController: AnnotationViewDelegate {
     func didTouch(annotationView: AnnotationView) {
         if let annotation = annotationView.annotation as? PlaceOfInterest {
             
+            // Request location details
             ActivityIndicator.shared.startAnimating()
             let request = GooglePlacesRequest(requestType: .details, reference: annotation.reference)
             let dispatcher = NetworkDispatcher(request: request)
             
+            placeToSend = PlaceOfInterest(location: annotation.location, reference: annotation.reference, name: annotation.placeName, address: annotation.address)
             
             dispatcher.requestDetails(
                 onSuccess: { (detail) in
-                    ActivityIndicator.shared.stopAnimating()
-                    annotation.phoneNumber = detail.phoneNumber
-                    annotation.website = detail.website
                     
-                    self.presentInfo(forPlace: annotation)
+                    self.placeToSend.phoneNumber = detail.phoneNumber
+                    self.placeToSend.website = detail.website
+                    
+                    let dispatchGroup = DispatchGroup()
+                    let imageQueue = DispatchQueue(label: "imageQueue")
+                    
+                    // Request images of the location
+                    if let references = detail.imageReferences {
+                        
+                        imageQueue.async(group: dispatchGroup, execute: {
+                            for imageRef in references {
+                                dispatchGroup.enter()
+                                let request = GooglePlacesRequest(requestType: .image, imageReference: imageRef)
+                                let imageDispatcher = NetworkDispatcher(request: request)
+                                
+                                imageDispatcher.requestImage(
+                                    onSuccess: { (image) in
+                                        dispatchGroup.leave()
+                                        self.placeToSend.images.append(image)
+                                }, onFailure: { (error) in
+                                    dispatchGroup.leave()
+                                    print("Failure to retrieve image", error)
+                                })
+                            }
+                        })
+                    }
+                    
+                    // Images done downloading
+                    dispatchGroup.notify(queue: imageQueue, execute: {
+                        DispatchQueue.main.async {
+                            ActivityIndicator.shared.stopAnimating()
+                            self.performSegue(withIdentifier: "showPlaceDetail", sender: nil)
+                        }
+                    })
             }, onFailure: { (error) in
                 ActivityIndicator.shared.stopAnimating()
-                
+                self.present(error: error)
             })
         }
+        
     }
+    
+    // MARK: - Segue detail pass
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let detailVC = segue.destination as? PlaceDetailViewController {
+            detailVC.placeDetail = placeToSend
+        }
+        
+    }
+    
 }
+
+
 
 // MARK: - Location Manager Delegate
 
@@ -135,13 +187,6 @@ extension GroundViewController {
             errorMessage = "Not sure what went wrong!"
         }
         self.presentNetworkError(forFailure: errorMessage)
-    }
-    
-    func presentInfo(forPlace place: PlaceOfInterest) {
-        let alert = UIAlertController(title: place.placeName , message: place.infoText, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        
-        present(alert, animated: true, completion: nil)
     }
     
 }

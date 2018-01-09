@@ -10,7 +10,8 @@ import Foundation
 
 struct PlaceDetail {
     
-    let phoneNumber: String
-    let website: String
+    let phoneNumber: String?
+    let website: String?
+    let imageReferences: [String]?
     
 }

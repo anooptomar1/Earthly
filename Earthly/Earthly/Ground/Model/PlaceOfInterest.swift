@@ -19,6 +19,7 @@ class PlaceOfInterest: ARAnnotation {
     let address: String
     var phoneNumber: String?
     var website: String?
+    var images: [UIImage] = []
     
     var infoText: String {
         get {

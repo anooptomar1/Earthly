@@ -26,6 +26,11 @@
 		344EFFE820045949004626DF /* GooglePlacesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EFFE720045949004626DF /* GooglePlacesRequest.swift */; };
 		344EFFEA200459AC004626DF /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EFFE9200459AC004626DF /* NetworkDispatcher.swift */; };
 		344EFFEC20045B75004626DF /* PlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EFFEB20045B75004626DF /* PlaceDetail.swift */; };
+		344EFFEE20048A9E004626DF /* OpenSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EFFED20048A9E004626DF /* OpenSystem.swift */; };
+		344EFFF220050CB7004626DF /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EFFF120050CB7004626DF /* PlaceDetailViewController.swift */; };
+		344EFFF620050E1C004626DF /* CoreExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EFFF520050E1C004626DF /* CoreExtensions.swift */; };
+		344EFFFA20051304004626DF /* EarthlyImagePager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344EFFF920051304004626DF /* EarthlyImagePager.swift */; };
+		344EFFFE200513FA004626DF /* Ground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344EFFFD200513FA004626DF /* Ground.storyboard */; };
 		34650E9C1FD8BF8300056005 /* RemoteTiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 34650E9B1FD8BF8200056005 /* RemoteTiles.json */; };
 		34650E9E1FD8D88A00056005 /* GlobeControlActionSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */; };
 		348C39DC1FFC2ED100A2C82F /* EarthlySearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */; };
@@ -45,7 +50,6 @@
 		34A246961FD458DB00273354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246951FD458DB00273354 /* Assets.xcassets */; };
 		34A246991FD458DB00273354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246971FD458DB00273354 /* LaunchScreen.storyboard */; };
 		34A246A31FD4645800273354 /* Globe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A21FD4645800273354 /* Globe.storyboard */; };
-		34A246A51FD464E100273354 /* Ground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A41FD464E100273354 /* Ground.storyboard */; };
 		34A246A71FD4674D00273354 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A246A61FD4674D00273354 /* Icons.xcassets */; };
 		34A246AB1FD468EC00273354 /* GlobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A246AA1FD468EC00273354 /* GlobeViewController.swift */; };
 		34A246B21FD46A0500273354 /* starterTiles.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 34A246B11FD46A0500273354 /* starterTiles.mbtiles */; };
@@ -100,6 +104,11 @@
 		344EFFE720045949004626DF /* GooglePlacesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesRequest.swift; sourceTree = "<group>"; };
 		344EFFE9200459AC004626DF /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		344EFFEB20045B75004626DF /* PlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetail.swift; sourceTree = "<group>"; };
+		344EFFED20048A9E004626DF /* OpenSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSystem.swift; sourceTree = "<group>"; };
+		344EFFF120050CB7004626DF /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		344EFFF520050E1C004626DF /* CoreExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreExtensions.swift; sourceTree = "<group>"; };
+		344EFFF920051304004626DF /* EarthlyImagePager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthlyImagePager.swift; sourceTree = "<group>"; };
+		344EFFFD200513FA004626DF /* Ground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ground.storyboard; sourceTree = "<group>"; };
 		34650E9B1FD8BF8200056005 /* RemoteTiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RemoteTiles.json; sourceTree = "<group>"; };
 		34650E9D1FD8D88A00056005 /* GlobeControlActionSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeControlActionSheets.swift; sourceTree = "<group>"; };
 		348C39DB1FFC2ED100A2C82F /* EarthlySearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthlySearchBar.swift; sourceTree = "<group>"; };
@@ -121,7 +130,6 @@
 		34A246981FD458DB00273354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34A2469A1FD458DB00273354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34A246A21FD4645800273354 /* Globe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Globe.storyboard; sourceTree = "<group>"; };
-		34A246A41FD464E100273354 /* Ground.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ground.storyboard; sourceTree = "<group>"; };
 		34A246A61FD4674D00273354 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		34A246AA1FD468EC00273354 /* GlobeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeViewController.swift; sourceTree = "<group>"; };
 		34A246B11FD46A0500273354 /* starterTiles.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = starterTiles.mbtiles; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				344EFFDF20044064004626DF /* GroundViewController.swift */,
+				344EFFF120050CB7004626DF /* PlaceDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				344EFFD6200437FD004626DF /* AnnotationView.swift */,
+				344EFFF920051304004626DF /* EarthlyImagePager.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,7 +296,7 @@
 			children = (
 				34A246921FD458DB00273354 /* Main.storyboard */,
 				34A246A21FD4645800273354 /* Globe.storyboard */,
-				34A246A41FD464E100273354 /* Ground.storyboard */,
+				344EFFFD200513FA004626DF /* Ground.storyboard */,
 				34A246971FD458DB00273354 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -391,6 +401,8 @@
 				34A246D11FD64C6500273354 /* EarthlyTabBarController.swift */,
 				348C39FC2001AB7800A2C82F /* EarthlyGeocoder.swift */,
 				348C39FE2001AEA500A2C82F /* Alerts.swift */,
+				344EFFED20048A9E004626DF /* OpenSystem.swift */,
+				344EFFF520050E1C004626DF /* CoreExtensions.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -504,11 +516,11 @@
 				34A246A31FD4645800273354 /* Globe.storyboard in Resources */,
 				34A246991FD458DB00273354 /* LaunchScreen.storyboard in Resources */,
 				3427394E1FDA412B00FB1AE0 /* AerisKeys.plist in Resources */,
-				34A246A51FD464E100273354 /* Ground.storyboard in Resources */,
 				34A246961FD458DB00273354 /* Assets.xcassets in Resources */,
 				34A246B21FD46A0500273354 /* starterTiles.mbtiles in Resources */,
 				34650E9C1FD8BF8300056005 /* RemoteTiles.json in Resources */,
 				34A246A71FD4674D00273354 /* Icons.xcassets in Resources */,
+				344EFFFE200513FA004626DF /* Ground.storyboard in Resources */,
 				34A246941FD458DB00273354 /* Main.storyboard in Resources */,
 				344EFFDE20043C3F004626DF /* GoogleKeys.plist in Resources */,
 			);
@@ -571,6 +583,7 @@
 			files = (
 				34FA71F11FD6F6240080A182 /* ControlAnimationExtensions.swift in Sources */,
 				3427394C1FDA403900FB1AE0 /* AerisWeather.swift in Sources */,
+				344EFFF620050E1C004626DF /* CoreExtensions.swift in Sources */,
 				34A246CB1FD5B7F100273354 /* GlobeAnimation.swift in Sources */,
 				344EFFEA200459AC004626DF /* NetworkDispatcher.swift in Sources */,
 				34A246D21FD64C6500273354 /* EarthlyTabBarController.swift in Sources */,
@@ -589,12 +602,14 @@
 				348C39F720017FDA00A2C82F /* ConfigurableCell.swift in Sources */,
 				34A2468F1FD458DB00273354 /* AppDelegate.swift in Sources */,
 				344EFFE420044C93004626DF /* JSONParser.swift in Sources */,
+				344EFFFA20051304004626DF /* EarthlyImagePager.swift in Sources */,
 				348C39FD2001AB7800A2C82F /* EarthlyGeocoder.swift in Sources */,
 				344EFFD7200437FD004626DF /* AnnotationView.swift in Sources */,
 				348C3A042001BBEC00A2C82F /* EarthlyActivityIndicator.swift in Sources */,
 				34A246C61FD4EDA600273354 /* GlobeManager.swift in Sources */,
 				348C39E21FFDA0AE00A2C82F /* GlobeSearch.swift in Sources */,
 				344EFFE820045949004626DF /* GooglePlacesRequest.swift in Sources */,
+				344EFFEE20048A9E004626DF /* OpenSystem.swift in Sources */,
 				344EFFE020044064004626DF /* GroundViewController.swift in Sources */,
 				348C39F520017D7C00A2C82F /* LocationTableViewCell.swift in Sources */,
 				34FA71EF1FD6EBB00080A182 /* GlobeControls.swift in Sources */,
@@ -603,6 +618,7 @@
 				34A246B61FD4A19700273354 /* SpaceBackgroundView.swift in Sources */,
 				344EFFE6200458EB004626DF /* GooglePlacesAPIClient.swift in Sources */,
 				34A246C41FD4E62400273354 /* MediaManager.swift in Sources */,
+				344EFFF220050CB7004626DF /* PlaceDetailViewController.swift in Sources */,
 				348C39FB200185DF00A2C82F /* GlobeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

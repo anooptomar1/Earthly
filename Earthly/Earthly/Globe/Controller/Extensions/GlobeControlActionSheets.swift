@@ -82,8 +82,8 @@ extension GlobeViewController {
     func display(sheet: UIAlertController) {
         sheet.view.tintColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
         present(sheet, animated: true, completion: nil)
-        UIVisualEffectView.appearance(whenContainedInInstancesOf: [UIAlertController.classForCoder() as! UIAppearanceContainer.Type]).effect = UIBlurEffect(style: .dark)
     }
+    
 }
 
 // MARK: - Extension to capitlize local tile enum

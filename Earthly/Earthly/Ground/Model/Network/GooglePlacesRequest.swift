@@ -50,10 +50,25 @@ struct GooglePlacesRequest {
         }
     }
     
+    init(requestType: RequestType, imageReference: String) {
+        self.requestType = requestType
+        if let path = Bundle.main.path(forResource: "GoogleKeys", ofType: "plist") {
+            guard let key = NSDictionary(contentsOfFile: path) as? [String : String],
+                let apiKey = key["apiKey"] else { urlString = ""; return }
+            if requestType == .image {
+                urlString = GoogleURL.base + "photo?maxwidth=350&photoreference=\(imageReference)&key=\(apiKey)"
+            } else {
+                urlString = ""
+            }
+        } else {
+            urlString = ""
+        }
+    }
+    
 }
 
 enum RequestType {
-    case places, details
+    case places, details, image
 }
 
 struct GoogleURL {

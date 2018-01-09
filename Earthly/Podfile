@@ -4,5 +4,6 @@ target 'Earthly' do
   use_frameworks!
 
   pod 'HDAugmentedReality', '~> 2.3'
+  pod 'FSPagerView'
 
 end

@@ -23,7 +23,6 @@ class NetworkDispatcher: GooglePlacesAPIClient {
     // MARK: - Network Request
     
     func requestPlaces(onSuccess: @escaping PlacesCallback, onFailure: @escaping NetworkErrorCallback) {
-        
         guard let url = googlePlacesRequest.endPointURL else { onFailure(.unknown); return }
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -43,7 +42,6 @@ class NetworkDispatcher: GooglePlacesAPIClient {
     }
     
     func requestDetails(onSuccess: @escaping PlaceDetailCallback, onFailure: @escaping NetworkErrorCallback) {
-        
         guard let url = googlePlacesRequest.endPointURL else { onFailure(.unknown); return }
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -66,5 +64,27 @@ class NetworkDispatcher: GooglePlacesAPIClient {
         }.resume()
     }
     
+    func requestImage(onSuccess: @escaping ImageCallback, onFailure: @escaping NetworkErrorCallback) {
+        guard let url = googlePlacesRequest.endPointURL else {onFailure(.unknown); return }
+        
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        session.dataTask(with: url) { (data, response, error) in
+            
+            guard error == nil else { onFailure(.failedRequest); return }
+            if let data = data, let response = response as? HTTPURLResponse {
+                if response.statusCode == 200 {
+                    if let image = UIImage(data: data) {
+                        onSuccess(image)
+                    } else {
+                        onFailure(.unknown)
+                    }
+                } else {
+                    onFailure(.failedRequest)
+                }
+            } else {
+                onFailure(.unknown)
+            }
+        }.resume()
+    }
     
 }

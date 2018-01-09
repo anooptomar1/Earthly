@@ -30,10 +30,11 @@ class AnnotationView: ARAnnotationView {
         distanceLabel?.removeFromSuperview()
         
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: self.frame.size.width, height: 30))
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 17)
         label.numberOfLines = 0
         label.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
         label.textColor = UIColor.white
+        label.minimumScaleFactor = 0.5
         self.addSubview(label)
         self.titleLabel = label
         
