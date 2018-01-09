@@ -16,7 +16,6 @@ class PlaceDetailViewController: UIViewController {
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var earthlyImagePager: EarthlyImagePager!
     @IBOutlet weak var pageControl: FSPageControl!
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var directionsButton: UIButton!
     @IBOutlet weak var websiteButton: UIButton!
@@ -41,9 +40,6 @@ class PlaceDetailViewController: UIViewController {
         } else {
             earthlyImagePager.removeFromSuperview()
         }
-        
-        descriptionTextView.text = placeDetail.infoText
-        print(placeDetail.infoText)
 
         if placeDetail.phoneNumber == nil { callButton.removeFromSuperview() }
         if placeDetail.website == nil { directionsButton.removeFromSuperview() }

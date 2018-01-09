@@ -82,7 +82,7 @@
                                                     <rect key="frame" x="0.0" y="47" width="209" height="32"/>
                                                     <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                    <state key="normal" title="Get Directions">
+                                                    <state key="normal" title="Directions">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -139,19 +139,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="qVn-UA-dEL" secondAttribute="trailing" id="zJ0-3R-5Y5"/>
                                                     </constraints>
                                                 </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IeG-Y0-gC1">
-                                                    <rect key="frame" x="0.0" y="187" width="299" height="128"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="f85-Qp-sJW" secondAttribute="trailing" constant="29.5" id="Rab-qf-WV6"/>
-                                                <constraint firstItem="f85-Qp-sJW" firstAttribute="leading" secondItem="spO-zb-YAf" secondAttribute="leading" constant="29.5" id="bpV-9X-AKj"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -159,13 +147,16 @@
                                         <constraint firstItem="R2W-Ns-R4v" firstAttribute="width" secondItem="spO-zb-YAf" secondAttribute="width" multiplier="0.7" id="BpT-ia-NTT"/>
                                         <constraint firstItem="TFm-tZ-zh3" firstAttribute="top" secondItem="5kd-ju-bw7" secondAttribute="top" constant="8" id="TeD-tw-GBF"/>
                                         <constraint firstItem="R2W-Ns-R4v" firstAttribute="centerX" secondItem="5kd-ju-bw7" secondAttribute="centerX" id="Y7c-jo-Woj"/>
-                                        <constraint firstAttribute="bottom" secondItem="R2W-Ns-R4v" secondAttribute="bottom" constant="20" id="bZt-Mc-1CB"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="R2W-Ns-R4v" secondAttribute="bottom" priority="999" constant="20" id="bZt-Mc-1CB"/>
                                         <constraint firstItem="spO-zb-YAf" firstAttribute="leading" secondItem="5kd-ju-bw7" secondAttribute="leading" constant="8" id="fVm-hV-AoC"/>
-                                        <constraint firstItem="R2W-Ns-R4v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="spO-zb-YAf" secondAttribute="bottom" constant="40" id="inj-4P-W5M"/>
+                                        <constraint firstItem="R2W-Ns-R4v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="spO-zb-YAf" secondAttribute="bottom" constant="30" id="inj-4P-W5M"/>
                                         <constraint firstItem="spO-zb-YAf" firstAttribute="top" secondItem="TFm-tZ-zh3" secondAttribute="bottom" constant="20" id="lx8-f7-i1W"/>
                                         <constraint firstAttribute="trailing" secondItem="spO-zb-YAf" secondAttribute="trailing" constant="8" id="vWQ-BB-FKQ"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="R2W-Ns-R4v" secondAttribute="bottom" constant="20" id="kz8-zR-uEa"/>
+                                </constraints>
                                 <blurEffect style="light"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -176,16 +167,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="C4i-4b-U5z" firstAttribute="bottom" secondItem="NAy-MG-gcg" secondAttribute="bottom" constant="60" id="1IG-c0-7ie"/>
-                            <constraint firstItem="NAy-MG-gcg" firstAttribute="top" secondItem="C4i-4b-U5z" secondAttribute="top" constant="20" id="ahr-gd-LuF"/>
-                            <constraint firstItem="NAy-MG-gcg" firstAttribute="leading" secondItem="C4i-4b-U5z" secondAttribute="leading" constant="30" id="hrm-tY-TQ5"/>
-                            <constraint firstItem="C4i-4b-U5z" firstAttribute="trailing" secondItem="NAy-MG-gcg" secondAttribute="trailing" constant="30" id="r9J-L9-Bpr"/>
+                            <constraint firstItem="NAy-MG-gcg" firstAttribute="centerY" secondItem="tbf-9f-I0D" secondAttribute="centerY" id="gdR-J7-3UJ"/>
+                            <constraint firstItem="NAy-MG-gcg" firstAttribute="centerX" secondItem="tbf-9f-I0D" secondAttribute="centerX" id="pjL-wx-FHW"/>
+                            <constraint firstItem="NAy-MG-gcg" firstAttribute="width" secondItem="C4i-4b-U5z" secondAttribute="width" multiplier="0.75" id="qmT-ko-i6y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C4i-4b-U5z"/>
                     </view>
                     <connections>
                         <outlet property="callButton" destination="e0D-wW-gNg" id="gTd-vb-tRj"/>
-                        <outlet property="descriptionTextView" destination="IeG-Y0-gC1" id="tAI-xd-vk4"/>
                         <outlet property="directionsButton" destination="51r-tv-5qR" id="PMG-DR-wf0"/>
                         <outlet property="earthlyImagePager" destination="f85-Qp-sJW" id="0d8-o1-j45"/>
                         <outlet property="pageControl" destination="qVn-UA-dEL" id="shs-ON-JNF"/>
