@@ -36,7 +36,6 @@ class JSONParser {
             print("Error Parsing JSON", parseError)
             return nil
         }
-        return nil
     }
     
     static func parseDetails(withData data: Data) -> PlaceDetail? {
@@ -54,7 +53,6 @@ class JSONParser {
             print("Error Parsing JSON", parseError) 
             return nil
         }
-        return nil
     }
     
 }
