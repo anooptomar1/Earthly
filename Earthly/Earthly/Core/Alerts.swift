@@ -31,6 +31,21 @@ extension UIViewController {
         }
     }
     
+    // MARK: - Network Error
+    
+    func presentNetworkError(forFailure failure: String) {
+        DispatchQueue.main.async {
+            let errorController = UIAlertController(title: "Something went wrong",
+                                                    message: "Something went wrong with the network request. Error: \(failure). Please try again.",
+                preferredStyle: .alert)
+            
+            let okayAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            errorController.addAction(okayAction)
+            
+            self.present(errorController, animated: true, completion: nil)
+        }
+    }
+    
     
 }
 
