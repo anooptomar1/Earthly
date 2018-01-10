@@ -25,7 +25,7 @@ class AerisWeather {
     var refreshTimer: Timer?
     
     
-    init(aerisID: String, aerisKey: String, frameCount: Int = 6, animationPeriod: Float = 3.0, importanceScale: Float = 1.0/16.0, layerCode: String = "radar") {
+    init(aerisID: String, aerisKey: String, frameCount: Int = 6, animationPeriod: Float = 3.0, importanceScale: Float = 1.0/8.0, layerCode: String = "radar") {
         self.aerisID = aerisID
         self.aerisKey = aerisKey
         self.frameCount = frameCount

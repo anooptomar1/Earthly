@@ -97,9 +97,9 @@ class GlobeManager {
                 aerisLayer.imageDepth = UInt32(self.aeris.frameCount)
                 aerisLayer.animationPeriod = self.aeris.animationPeriod
                 aerisLayer.imageFormat = MaplyQuadImageFormat.imageUShort5551
-                aerisLayer.drawPriority = kMaplyImageLayerDrawPriorityDefault + 100
                 aerisLayer.maxTiles = 1000
                 aerisLayer.importanceScale = self.aeris.importanceScale
+                aerisLayer.drawPriority = INT_MAX
                 self.currentLayers.append(aerisLayer)
                 self.presentLayer()
             }
