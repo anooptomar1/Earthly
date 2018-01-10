@@ -29,33 +29,36 @@ class AnnotationView: ARAnnotationView {
         titleLabel?.removeFromSuperview()
         distanceLabel?.removeFromSuperview()
         
-        let label = UILabel(frame: CGRect(x: 10, y: 0, width: self.frame.size.width, height: 30))
-        label.font = UIFont.systemFont(ofSize: 17)
+        self.cornerRadius = 10
+        self.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
+        
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: self.frame.size.width - 20, height: 40))
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
-        label.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
+        label.backgroundColor = UIColor.clear
         label.textColor = UIColor.white
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
         self.addSubview(label)
         self.titleLabel = label
         
-        distanceLabel = UILabel(frame: CGRect(x: 10, y: 30, width: self.frame.size.width, height: 20))
-        distanceLabel?.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
-        distanceLabel?.textColor = UIColor.green
+        distanceLabel = UILabel(frame: CGRect(x: 10, y: 40, width: self.frame.size.width - 20, height: 20))
+        distanceLabel?.backgroundColor = UIColor.clear
+        distanceLabel?.textColor = #colorLiteral(red: 0, green: 0.9810667634, blue: 0.5736914277, alpha: 0.5)
         distanceLabel?.font = UIFont.systemFont(ofSize: 12)
         self.addSubview(distanceLabel!)
         
         if let annotation = annotation as? PlaceOfInterest {
             titleLabel?.text = annotation.placeName
             distanceLabel?.text = String(format: "%.2f miles", annotation.distanceFromUser * 0.000621371)
-            
         }
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel?.frame = CGRect(x: 10, y: 0, width: self.frame.size.width, height: 30)
-        distanceLabel?.frame = CGRect(x: 10, y: 30, width: self.frame.size.width, height: 20)
+        titleLabel?.frame = CGRect(x: 10, y: 0, width: self.frame.size.width - 20, height: 40)
+        distanceLabel?.frame = CGRect(x: 10, y: 40, width: self.frame.size.width - 20, height: 20)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
