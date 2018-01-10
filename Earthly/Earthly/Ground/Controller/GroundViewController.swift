@@ -31,7 +31,7 @@ class GroundViewController: ARViewController {
         super.viewDidLoad()
 
         dataSource = self
-        presenter.verticalStackingEnabled = true
+        presenter.presenterTransform = ARPresenterStackTransform()
         presenter.maxVisibleAnnotations = 50        
         
         trackingManager.userDistanceFilter = 25
@@ -39,7 +39,8 @@ class GroundViewController: ARViewController {
         uiOptions.closeButtonEnabled = false
         locationManager.delegate = self
         
-        // TODO: play with verticle positioning (github said to play with presenter.distance values)
+        presenter.distanceOffsetMode = .automaticOffsetMinDistance
+        presenter.distanceOffsetMultiplier = 0.00001
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -153,7 +154,7 @@ extension GroundViewController: CLLocationManagerDelegate {
                     startedLoadingPlaces = true
                     
                     ActivityIndicator.shared.startAnimating()
-                    let request = GooglePlacesRequest(requestType: .places, location: location, radius: 1000)
+                    let request = GooglePlacesRequest(requestType: .places, location: location, radius: 1500)
                     let dispatcher = NetworkDispatcher(request: request)
                     
                     
