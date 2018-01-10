@@ -13,10 +13,11 @@ class OpenSystem {
     
     static func phoneCall(withNumber number: String) {
         var phoneNumber = number.replacingOccurrences(of: "-", with: "")
-        phoneNumber = number.replacingOccurrences(of: " ", with: "")
-        phoneNumber = number.replacingOccurrences(of: "(", with: "")
-        phoneNumber = number.replacingOccurrences(of: ")", with: "")
-        phoneNumber = number.replacingOccurrences(of: "+", with: "")
+        phoneNumber = phoneNumber.replacingOccurrences(of: " ", with: "")
+        phoneNumber = phoneNumber.replacingOccurrences(of: "(", with: "")
+        phoneNumber = phoneNumber.replacingOccurrences(of: ")", with: "")
+        phoneNumber = phoneNumber.replacingOccurrences(of: "+", with: "")
+
         guard let number = URL(string: "tel://" + phoneNumber) else { return }
         self.openURL(url: number)
     }

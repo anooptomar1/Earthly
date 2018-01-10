@@ -110,13 +110,22 @@ extension GlobeViewController: GlobeDelegate {
                 let secondLocation = earthlyMarkers[lastIndex]
                 let distance = MaplyGreatCircleDistance(firstLocation.loc, secondLocation.loc)
                 let miles = Double(round(100 * (distance * 0.000621371))/100)
-                print("Miles = \(distance * 0.000621371)")
+                
+                let boldAttributes: [NSAttributedStringKey: Any] = [.font: UIFont.boldSystemFont(ofSize: 21)]
+                let milesText = NSMutableAttributedString(string: "\(miles) miles", attributes: boldAttributes)
+                
                 let firstLocationName = (firstLocation.userObject as! String)
                 let firstShorthand = firstLocationName.components(separatedBy: "•").first
                 let secondLocationName = (secondLocation.userObject as! String)
                 let secondShorthand = secondLocationName.components(separatedBy: "•").first
-                let text = "\(firstShorthand ?? firstLocationName) \nis \(miles) miles away from \n\(secondShorthand ?? secondLocationName)"
-                milesViewLabel.text = text
+                
+                let normalAttributes: [NSAttributedStringKey: Any] = [.font: UIFont.systemFont(ofSize: 21)]
+                let secondHalf = NSMutableAttributedString(string:" away from \n\(secondShorthand ?? secondLocationName)", attributes: normalAttributes)
+                let text = NSMutableAttributedString(string: "\(firstShorthand ?? firstLocationName) is\n", attributes: normalAttributes)
+                text.append(milesText)
+                text.append(secondHalf)
+    
+                milesViewLabel.attributedText = text
                 milesView.animateMilesViewUp()
             }
         }
@@ -169,7 +178,3 @@ extension GlobeViewController: WhirlyGlobeViewControllerDelegate {
     }
     
 }
-
-
-
-

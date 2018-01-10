@@ -35,6 +35,7 @@ class AnnotationView: ARAnnotationView {
         label.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
         label.textColor = UIColor.white
         label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         self.addSubview(label)
         self.titleLabel = label
         
