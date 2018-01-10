@@ -30,7 +30,7 @@ class AnnotationView: ARAnnotationView {
         distanceLabel?.removeFromSuperview()
         
         self.cornerRadius = 10
-        self.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
+        
         
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: self.frame.size.width - 20, height: 40))
         label.font = UIFont.boldSystemFont(ofSize: 17)
@@ -39,8 +39,9 @@ class AnnotationView: ARAnnotationView {
         label.textColor = UIColor.white
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
-        self.addSubview(label)
         self.titleLabel = label
+        self.addSubview(label)
+        
         
         distanceLabel = UILabel(frame: CGRect(x: 10, y: 40, width: self.frame.size.width - 20, height: 20))
         distanceLabel?.backgroundColor = UIColor.clear
@@ -59,6 +60,7 @@ class AnnotationView: ARAnnotationView {
         super.layoutSubviews()
         titleLabel?.frame = CGRect(x: 10, y: 0, width: self.frame.size.width - 20, height: 40)
         distanceLabel?.frame = CGRect(x: 10, y: 40, width: self.frame.size.width - 20, height: 20)
+        backgroundColor = UIColor(white: 0.3, alpha: 0.7)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

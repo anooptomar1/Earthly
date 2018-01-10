@@ -99,7 +99,7 @@ extension GlobeViewController: GlobeDelegate {
             marker.loc = MaplyCoordinateMakeWithDegrees(longitude, latitude)
             marker.size = CGSize(width: 40, height: 40)
             marker.userObject = name
-            marker.layoutImportance = MAXFLOAT
+            marker.layoutImportance = MAXFLOAT - 500
             let newMarker = addScreenMarkers([marker], desc: nil)
             activeObjects.append(newMarker!)
             earthlyMarkers.append(marker)
