@@ -97,9 +97,9 @@ extension GlobeViewController: GlobeDelegate {
             let marker = MaplyScreenMarker()
             marker.image = #imageLiteral(resourceName: "GPS")
             marker.loc = MaplyCoordinateMakeWithDegrees(longitude, latitude)
-            marker.size = CGSize(width: 40, height: 40)
+            marker.size = CGSize(width: 25, height: 25)
             marker.userObject = name
-            marker.layoutImportance = MAXFLOAT - 500
+            marker.layoutImportance = MAXFLOAT
             let newMarker = addScreenMarkers([marker], desc: nil)
             activeObjects.append(newMarker!)
             earthlyMarkers.append(marker)

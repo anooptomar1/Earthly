@@ -117,7 +117,7 @@ class GlobeManager {
         currentLayers.last?.coverPoles = true
         currentLayers.last?.requireElev = false
         currentLayers.last?.waitLoad = false
-        currentLayers.last?.drawPriority = INT_MAX - 1000
+        currentLayers.last?.drawPriority = 1
         currentLayers.last?.singleLevelLoading = false
         globeController.add(currentLayers.last!)
     }
